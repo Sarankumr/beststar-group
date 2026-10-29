@@ -21,7 +21,7 @@ export default function CareersSection({ limit }: CareersSectionProps) {
       className="section-spacing"
       style={{
         position: "relative",
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "var(--bg-surface)",
       }}
     >
       <div className="site-container">
@@ -51,28 +51,28 @@ export default function CareersSection({ limit }: CareersSectionProps) {
         >
           <div className="luxe-card" style={{ padding: "20px", background: "var(--gold-50)", border: "1px solid var(--border-gold-subtle)" }}>
             <div className="font-serif" style={{ color: "var(--gold-800)", fontSize: "1.05rem", fontWeight: 800, marginBottom: "6px" }}>
-              Merit-Based Progression
+              {t("careers.benefit1Title")}
             </div>
             <p style={{ color: "var(--text-secondary)", fontSize: "0.86rem", margin: 0 }}>
-              Structured annual appraisals, fast-track leadership tracks, and international project assignments.
+              {t("careers.benefit1Desc")}
             </p>
           </div>
 
           <div className="luxe-card" style={{ padding: "20px", background: "var(--gold-50)", border: "1px solid var(--border-gold-subtle)" }}>
             <div className="font-serif" style={{ color: "var(--gold-800)", fontSize: "1.05rem", fontWeight: 800, marginBottom: "6px" }}>
-              Global Mobility
+              {t("careers.benefit2Title")}
             </div>
             <p style={{ color: "var(--text-secondary)", fontSize: "0.86rem", margin: 0 }}>
-              Cross-border assignments connecting UAE operations with Saudi Arabia, India, and Malaysia hubs.
+              {t("careers.benefit2Desc")}
             </p>
           </div>
 
           <div className="luxe-card" style={{ padding: "20px", background: "var(--gold-50)", border: "1px solid var(--border-gold-subtle)" }}>
             <div className="font-serif" style={{ color: "var(--gold-800)", fontSize: "1.05rem", fontWeight: 800, marginBottom: "6px" }}>
-              Healthcare & Family Care
+              {t("careers.benefit3Title")}
             </div>
             <p style={{ color: "var(--text-secondary)", fontSize: "0.86rem", margin: 0 }}>
-              Comprehensive top-tier medical health insurance, annual home flights, and educational support grants.
+              {t("careers.benefit3Desc")}
             </p>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function CareersSection({ limit }: CareersSectionProps) {
                 padding: "22px 28px",
                 gap: "20px",
                 border: "1.5px solid var(--border-gold-medium)",
-                backgroundColor: "#FFFFFF",
+                backgroundColor: "var(--bg-card)",
                 transition: "all 0.25s ease"
               }}
             >

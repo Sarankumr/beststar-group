@@ -99,7 +99,7 @@ export default function SubsidiariesSection({ limit, showFilters = true }: Subsi
       style={{
         position: "relative",
         zIndex: 10,
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "var(--bg-deep)",
       }}
     >
       <div className="site-container">
@@ -128,7 +128,7 @@ export default function SubsidiariesSection({ limit, showFilters = true }: Subsi
                 position: "relative",
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "#FAF9F6",
+                backgroundColor: "var(--bg-surface)",
                 border: "1.5px solid var(--border-gold-medium)",
                 borderRadius: "32px",
                 padding: "6px 18px",
@@ -209,7 +209,7 @@ export default function SubsidiariesSection({ limit, showFilters = true }: Subsi
                   style={{
                     background: activeSectorKey === sec.key 
                       ? "linear-gradient(135deg, #D4A328 0%, #B8860B 100%)" 
-                      : "#FFFFFF",
+                      : "var(--bg-card)",
                     color: activeSectorKey === sec.key 
                       ? "#080C14" 
                       : "var(--text-secondary)",
@@ -267,7 +267,7 @@ export default function SubsidiariesSection({ limit, showFilters = true }: Subsi
             style={{
               textAlign: "center",
               padding: "60px 24px",
-              backgroundColor: "#FAF9F6",
+              backgroundColor: "var(--bg-surface)",
               borderRadius: "12px",
               border: "1.5px dashed var(--border-gold-medium)",
               margin: "20px 0 40px 0",
@@ -335,7 +335,7 @@ export default function SubsidiariesSection({ limit, showFilters = true }: Subsi
                   padding: "0",
                   overflow: "hidden",
                   border: "1px solid var(--border-gold-medium)",
-                  backgroundColor: "#FFFFFF"
+                  backgroundColor: "var(--bg-card)"
                 }}
               >
                 {/* Card Cover Image */}
@@ -384,8 +384,9 @@ export default function SubsidiariesSection({ limit, showFilters = true }: Subsi
 
                     <span 
                       style={{
-                        background: "rgba(255, 255, 255, 0.95)",
+                        background: "var(--bg-card)",
                         color: "var(--text-primary)",
+                        border: "1px solid var(--border-gold-subtle)",
                         fontSize: "0.68rem",
                         fontWeight: 800,
                         padding: "3px 8px",
@@ -515,7 +516,7 @@ export default function SubsidiariesSection({ limit, showFilters = true }: Subsi
                         padding: "5px 12px",
                         borderRadius: "4px",
                         border: "1px solid var(--border-gold-medium)",
-                        backgroundColor: "#FAF9F6",
+                        backgroundColor: "var(--bg-surface)",
                         transition: "all 0.2s"
                       }}
                       onMouseEnter={(e) => {
@@ -523,7 +524,7 @@ export default function SubsidiariesSection({ limit, showFilters = true }: Subsi
                         e.currentTarget.style.borderColor = "var(--gold-500)";
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = "#FAF9F6";
+                        e.currentTarget.style.backgroundColor = "var(--bg-surface)";
                         e.currentTarget.style.borderColor = "var(--border-gold-medium)";
                       }}
                     >

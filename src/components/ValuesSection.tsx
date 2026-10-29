@@ -13,25 +13,25 @@ export default function ValuesSection() {
       icon: <Zap size={24} color="var(--gold-700)" />,
       title: t("values.item1Title"),
       desc: t("values.item1Desc"),
-      standard: "Continuous Co-Investment"
+      standard: t("valuesExtra.standard1")
     },
     {
       icon: <Award size={24} color="var(--gold-700)" />,
       title: t("values.item2Title"),
       desc: t("values.item2Desc"),
-      standard: "ISO 9001:2015 & MOHAP"
+      standard: t("valuesExtra.standard2")
     },
     {
       icon: <Shield size={24} color="var(--gold-700)" />,
       title: t("values.item3Title"),
       desc: t("values.item3Desc"),
-      standard: "Zero Harm Mandate"
+      standard: t("valuesExtra.standard3")
     },
     {
       icon: <HeartPulse size={24} color="var(--gold-700)" />,
       title: t("values.item4Title"),
       desc: t("values.item4Desc"),
-      standard: "99.8% Client Retention"
+      standard: t("valuesExtra.standard4")
     }
   ];
 
@@ -41,7 +41,7 @@ export default function ValuesSection() {
       className="section-spacing"
       style={{
         position: "relative",
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "var(--bg-deep)",
       }}
     >
       <div className="site-container">
@@ -77,7 +77,7 @@ export default function ValuesSection() {
                 flexDirection: "column",
                 justifyContent: "space-between",
                 border: "1px solid var(--border-gold-medium)",
-                backgroundColor: "#FAF9F6"
+                backgroundColor: "var(--bg-card)"
               }}
             >
               <div>

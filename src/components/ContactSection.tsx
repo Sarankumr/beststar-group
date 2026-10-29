@@ -52,7 +52,7 @@ export default function ContactSection({ preselectedSubsidiary }: ContactSection
       className="section-spacing"
       style={{
         position: "relative",
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "var(--bg-deep)",
         borderTop: "1px solid var(--border-gold-subtle)",
       }}
     >
@@ -85,16 +85,16 @@ export default function ContactSection({ preselectedSubsidiary }: ContactSection
             className="luxe-card"
             style={{
               padding: "36px",
-              background: "#FFFFFF",
+              background: "var(--bg-card)",
               border: "1.5px solid var(--border-gold-medium)",
               boxShadow: "0 10px 30px rgba(0,0,0,0.04)"
             }}
           >
             <h3 className="font-serif" style={{ fontSize: "1.4rem", color: "var(--text-primary)", marginBottom: "6px" }}>
-              Corporate & Commercial Inquiry Form
+              {t("contactExtra.formTitle")}
             </h3>
             <p style={{ color: "var(--text-secondary)", fontSize: "0.88rem", marginBottom: "24px" }}>
-              Please provide complete details so we can route your submission directly to the relevant subsidiary directorate.
+              {t("contactExtra.formSubtitle")}
             </p>
 
             {isSuccess ? (
@@ -132,7 +132,7 @@ export default function ContactSection({ preselectedSubsidiary }: ContactSection
                       style={{
                         width: "100%",
                         padding: "11px 14px",
-                        background: "#FFFFFF",
+                        background: "var(--bg-surface)",
                         border: "1.5px solid var(--border-gold-medium)",
                         borderRadius: "4px",
                         color: "var(--text-primary)",
@@ -154,7 +154,7 @@ export default function ContactSection({ preselectedSubsidiary }: ContactSection
                       style={{
                         width: "100%",
                         padding: "11px 14px",
-                        background: "#FFFFFF",
+                        background: "var(--bg-surface)",
                         border: "1.5px solid var(--border-gold-medium)",
                         borderRadius: "4px",
                         color: "var(--text-primary)",
@@ -178,7 +178,7 @@ export default function ContactSection({ preselectedSubsidiary }: ContactSection
                       style={{
                         width: "100%",
                         padding: "11px 14px",
-                        background: "#FFFFFF",
+                        background: "var(--bg-surface)",
                         border: "1.5px solid var(--border-gold-medium)",
                         borderRadius: "4px",
                         color: "var(--text-primary)",
@@ -199,7 +199,7 @@ export default function ContactSection({ preselectedSubsidiary }: ContactSection
                       style={{
                         width: "100%",
                         padding: "11px 14px",
-                        background: "#FFFFFF",
+                        background: "var(--bg-surface)",
                         border: "1.5px solid var(--border-gold-medium)",
                         borderRadius: "4px",
                         color: "var(--text-primary)",
@@ -225,7 +225,7 @@ export default function ContactSection({ preselectedSubsidiary }: ContactSection
                           badge: sub.shortName
                         }))
                       ]}
-                      placeholder="Select Target Subsidiary / Sector"
+                      placeholder={t("contactExtra.selectPlaceholder")}
                     />
                   </div>
 
@@ -243,7 +243,7 @@ export default function ContactSection({ preselectedSubsidiary }: ContactSection
                         { value: "Executive Media / Investor Relation", label: t("contact.optMedia") },
                         { value: "General Corporate Inquiry", label: t("contact.optInquiry") },
                       ]}
-                      placeholder="Select Nature of Inquiry"
+                      placeholder={t("contact.inquiryType")}
                     />
                   </div>
                 </div>
@@ -261,7 +261,7 @@ export default function ContactSection({ preselectedSubsidiary }: ContactSection
                     style={{
                       width: "100%",
                       padding: "11px 14px",
-                      background: "#FFFFFF",
+                      background: "var(--bg-surface)",
                       border: "1.5px solid var(--border-gold-medium)",
                       borderRadius: "4px",
                       color: "var(--text-primary)",
@@ -295,11 +295,11 @@ export default function ContactSection({ preselectedSubsidiary }: ContactSection
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
                 <Building2 size={20} color="var(--gold-600)" />
                 <h4 className="font-serif" style={{ fontSize: "1.15rem", color: "var(--text-primary)", margin: 0 }}>
-                  Global Corporate Headquarters (UAE)
+                  {t("contactExtra.globalHq")}
                 </h4>
               </div>
               <p style={{ color: "var(--text-secondary)", fontSize: "0.88rem", lineHeight: 1.6, marginBottom: "14px" }}>
-                Best Star Group FZE, Executive Tower, Sheikh Zayed Road, Dubai & Hamriyah Free Zone, Sharjah, United Arab Emirates.
+                {t("contactExtra.globalHqAddress")}
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: "6px", fontSize: "0.85rem" }}>
                 <div style={{ color: "var(--gold-800)", fontWeight: 600 }}>
@@ -315,11 +315,11 @@ export default function ContactSection({ preselectedSubsidiary }: ContactSection
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
                 <Globe size={20} color="var(--gold-600)" />
                 <h4 className="font-serif" style={{ fontSize: "1.15rem", color: "var(--text-primary)", margin: 0 }}>
-                  Kingdom of Saudi Arabia Hub (KSA)
+                  {t("contactExtra.ksaHub")}
                 </h4>
               </div>
               <p style={{ color: "var(--text-secondary)", fontSize: "0.88rem", lineHeight: 1.6, marginBottom: "14px" }}>
-                King Abdullah Financial City (KAFC) District, Northern Ring Road, Riyadh, Kingdom of Saudi Arabia.
+                {t("contactExtra.ksaHubAddress")}
               </p>
               <div style={{ color: "var(--gold-800)", fontSize: "0.85rem", fontWeight: 600 }}>
                 Direct Line: <a href="tel:+966114827100" style={{ color: "var(--text-primary)", textDecoration: "none" }}>+966 11 482 7100</a>
@@ -330,12 +330,12 @@ export default function ContactSection({ preselectedSubsidiary }: ContactSection
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
                 <Clock size={20} color="var(--gold-600)" />
                 <h4 className="font-serif" style={{ fontSize: "1.15rem", color: "var(--text-primary)", margin: 0 }}>
-                  Operating Business Hours
+                  {t("contactExtra.businessHours")}
                 </h4>
               </div>
               <p style={{ color: "var(--text-secondary)", fontSize: "0.85rem", lineHeight: 1.6, margin: 0 }}>
-                Monday &ndash; Friday: 08:30 AM &ndash; 06:00 PM (GST / UTC+4)<br />
-                Emergency Operations & Logistics Despatches: <strong>24/7/365 On-Call</strong>
+                {t("contactExtra.businessHoursWeekdays")}<br />
+                {t("contactExtra.emergency247")}
               </p>
             </div>
 

@@ -89,7 +89,7 @@ export default function BusinessIdeasPage() {
   };
 
   return (
-    <div style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "var(--bg-deep)", minHeight: "100vh" }}>
       <Header />
 
       {/* Hero Header */}
@@ -98,7 +98,7 @@ export default function BusinessIdeasPage() {
           position: "relative",
           paddingTop: "65px",
           paddingBottom: "55px",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-card)",
           borderBottom: "1px solid var(--border-gold-subtle)",
         }}
       >
@@ -148,7 +148,7 @@ export default function BusinessIdeasPage() {
               <a
                 href="#pipeline"
                 style={{
-                  background: "#FFFFFF",
+                  background: "var(--bg-card)",
                   border: "1.5px solid var(--border-gold-medium)",
                   color: "var(--text-primary)",
                   padding: "9px 20px",
@@ -162,7 +162,7 @@ export default function BusinessIdeasPage() {
                   transition: "all 0.2s ease"
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--gold-50)")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--bg-card)")}
               >
                 <span>EXPLORE ACTIVE PIPELINE (5)</span>
                 <ChevronRight size={14} color="var(--gold-600)" />
@@ -174,7 +174,7 @@ export default function BusinessIdeasPage() {
       </section>
 
       {/* Chairman's Open Innovation Mandate */}
-      <section style={{ backgroundColor: "#FAF8F5", padding: "48px 0" }}>
+      <section style={{ backgroundColor: "var(--bg-deep)", padding: "48px 0" }}>
         <div className="site-container">
           <div 
             style={{
@@ -238,7 +238,7 @@ export default function BusinessIdeasPage() {
       </section>
 
       {/* Active Pipeline Grid */}
-      <section id="pipeline" className="section-spacing" style={{ backgroundColor: "#FFFFFF" }}>
+      <section id="pipeline" className="section-spacing" style={{ backgroundColor: "var(--bg-surface)" }}>
         <div className="site-container">
           
           <div style={{ textAlign: "center", marginBottom: "36px" }}>
@@ -262,7 +262,7 @@ export default function BusinessIdeasPage() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "#FAF9F6",
+                backgroundColor: "var(--bg-surface)",
                 border: "1.5px solid var(--border-gold-medium)",
                 borderRadius: "32px",
                 padding: "6px 18px",
@@ -312,7 +312,7 @@ export default function BusinessIdeasPage() {
                   style={{
                     background: selectedCategory === cat 
                       ? "linear-gradient(135deg, #D4A328 0%, #B8860B 100%)" 
-                      : "#FFFFFF",
+                      : "var(--bg-card)",
                     color: selectedCategory === cat ? "#080C14" : "var(--text-secondary)",
                     border: selectedCategory === cat ? "1px solid #FFE494" : "1.5px solid var(--border-gold-subtle)",
                     borderRadius: "30px",
@@ -350,7 +350,7 @@ export default function BusinessIdeasPage() {
                   padding: "0",
                   overflow: "hidden",
                   border: "1px solid var(--border-gold-medium)",
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                 }}
               >
                 {/* Image & Badges */}
@@ -445,7 +445,7 @@ export default function BusinessIdeasPage() {
                     </div>
 
                     {/* Metric Badges */}
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "18px", padding: "10px", backgroundColor: "#FAF9F6", borderRadius: "6px", border: "1px solid var(--border-gold-subtle)" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "18px", padding: "10px", backgroundColor: "var(--bg-surface)", borderRadius: "6px", border: "1px solid var(--border-gold-subtle)" }}>
                       <div>
                         <div style={{ fontSize: "0.68rem", color: "var(--text-muted)", textTransform: "uppercase" }}>Capital Target</div>
                         <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "var(--text-primary)" }}>{idea.capitalRequirement.split(" ")[0]} {idea.capitalRequirement.split(" ")[1]}</div>
@@ -478,7 +478,7 @@ export default function BusinessIdeasPage() {
       </section>
 
       {/* Idea Pitch Submission Form */}
-      <section id="submit-idea" className="section-spacing" style={{ backgroundColor: "#FAF8F5" }}>
+      <section id="submit-idea" className="section-spacing" style={{ backgroundColor: "var(--bg-deep)" }}>
         <div className="site-container" style={{ maxWidth: "860px" }}>
           
           <div style={{ textAlign: "center", marginBottom: "36px" }}>
@@ -496,7 +496,7 @@ export default function BusinessIdeasPage() {
 
           <div 
             style={{
-              backgroundColor: "#FFFFFF",
+              backgroundColor: "var(--bg-card)",
               borderRadius: "12px",
               border: "1.5px solid var(--border-gold-medium)",
               padding: "40px",
@@ -560,6 +560,7 @@ export default function BusinessIdeasPage() {
                       category: "AI & Smart Infrastructure",
                       stage: "Concept Validation",
                       capitalRequired: "AED 1M - 3M",
+                      projectDescription: "",
                       executiveSummary: "",
                       synergyWithBestStar: "",
                     });
@@ -589,7 +590,7 @@ export default function BusinessIdeasPage() {
                         padding: "11px 14px",
                         borderRadius: "6px",
                         border: "1px solid var(--border-gold-medium)",
-                        backgroundColor: "#FAF9F6",
+                        backgroundColor: "var(--bg-surface)",
                         fontSize: "0.88rem",
                         color: "var(--text-primary)",
                         outline: "none",
@@ -612,7 +613,7 @@ export default function BusinessIdeasPage() {
                         padding: "11px 14px",
                         borderRadius: "6px",
                         border: "1px solid var(--border-gold-medium)",
-                        backgroundColor: "#FAF9F6",
+                        backgroundColor: "var(--bg-surface)",
                         fontSize: "0.88rem",
                         color: "var(--text-primary)",
                         outline: "none",
@@ -637,7 +638,7 @@ export default function BusinessIdeasPage() {
                         padding: "11px 14px",
                         borderRadius: "6px",
                         border: "1px solid var(--border-gold-medium)",
-                        backgroundColor: "#FAF9F6",
+                        backgroundColor: "var(--bg-surface)",
                         fontSize: "0.88rem",
                         color: "var(--text-primary)",
                         outline: "none",
@@ -659,7 +660,7 @@ export default function BusinessIdeasPage() {
                         padding: "11px 14px",
                         borderRadius: "6px",
                         border: "1px solid var(--border-gold-medium)",
-                        backgroundColor: "#FAF9F6",
+                        backgroundColor: "var(--bg-surface)",
                         fontSize: "0.88rem",
                         color: "var(--text-primary)",
                         outline: "none",
@@ -683,7 +684,7 @@ export default function BusinessIdeasPage() {
                       padding: "11px 14px",
                       borderRadius: "6px",
                       border: "1px solid var(--border-gold-medium)",
-                      backgroundColor: "#FAF9F6",
+                      backgroundColor: "var(--bg-surface)",
                       fontSize: "0.88rem",
                       color: "var(--text-primary)",
                       outline: "none",
@@ -762,7 +763,7 @@ export default function BusinessIdeasPage() {
                       padding: "12px 14px",
                       borderRadius: "6px",
                       border: "1px solid var(--border-gold-medium)",
-                      backgroundColor: "#FAF9F6",
+                      backgroundColor: "var(--bg-surface)",
                       fontSize: "0.88rem",
                       color: "var(--text-primary)",
                       outline: "none",
@@ -788,7 +789,7 @@ export default function BusinessIdeasPage() {
                       padding: "11px 14px",
                       borderRadius: "6px",
                       border: "1px solid var(--border-gold-medium)",
-                      backgroundColor: "#FAF9F6",
+                      backgroundColor: "var(--bg-surface)",
                       fontSize: "0.88rem",
                       color: "var(--text-primary)",
                       outline: "none",

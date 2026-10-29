@@ -6,13 +6,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
 import { Mail } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 function ContactPageContent() {
   const searchParams = useSearchParams();
   const preselected = searchParams.get("sector") || undefined;
+  const { t } = useLanguage();
 
   return (
-    <div style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "var(--bg-deep)", minHeight: "100vh" }}>
       <Header />
 
       {/* Hero Banner */}
@@ -21,20 +23,20 @@ function ContactPageContent() {
           position: "relative",
           paddingTop: "65px",
           paddingBottom: "55px",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-card)",
           borderBottom: "1px solid var(--border-gold-subtle)",
         }}
       >
         <div className="site-container">
           <div className="section-label">
             <Mail size={14} />
-            <span>GLOBAL REGISTRY & INQUIRIES</span>
+            <span>{t("contact.badge")}</span>
           </div>
           <h1 className="section-title">
-            Connect with <span className="text-gold-gradient">Best Star Group</span>
+            {t("contact.title")}
           </h1>
           <p className="section-subtitle">
-            Whether inquiring about commercial contracts, procurement tenders, corporate partnerships, or vendor registrations across our UAE, Saudi Arabia, India, and Malaysia entities.
+            {t("contact.subtitle")}
           </p>
         </div>
       </section>

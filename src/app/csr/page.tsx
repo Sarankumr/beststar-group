@@ -4,11 +4,14 @@ import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CSRSection from "@/components/CSRSection";
-import { Heart, GraduationCap, Stethoscope, Leaf, CheckCircle2, Award } from "lucide-react";
+import { Heart, CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function CSRPage() {
+  const { t } = useLanguage();
+
   return (
-    <div style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "var(--bg-deep)", minHeight: "100vh" }}>
       <Header />
 
       {/* Hero Banner */}
@@ -17,53 +20,53 @@ export default function CSRPage() {
           position: "relative",
           paddingTop: "65px",
           paddingBottom: "55px",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-card)",
           borderBottom: "1px solid var(--border-gold-subtle)",
         }}
       >
         <div className="site-container">
           <div className="section-label">
             <Heart size={14} color="var(--crimson-mid)" />
-            <span>CORPORATE SOCIAL RESPONSIBILITY & PHILANTHROPY</span>
+            <span>{t("csr.badge")}</span>
           </div>
           <h1 className="section-title">
-            The <span className="text-crimson-gradient">MAKE Trust</span> & Community Impact
+            {t("csr.title")}
           </h1>
           <p className="section-subtitle">
-            At Best Star Group, we measure true achievement not merely by balance sheets, but by human impact. Through our MAKE Trust educational missions and preventative healthcare camps, we empower thousands of students and workers each year.
+            {t("csr.subtitle")}
           </p>
         </div>
       </section>
 
       {/* MAKE Trust In-Depth Story */}
-      <section style={{ backgroundColor: "#FFFFFF", padding: "60px 0", borderBottom: "1px solid var(--border-gold-subtle)" }}>
+      <section style={{ backgroundColor: "var(--bg-surface)", padding: "60px 0", borderBottom: "1px solid var(--border-gold-subtle)" }}>
         <div className="site-container">
           
           <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "36px", alignItems: "center" }} className="csr-story-grid">
             <div>
-              <span className="crimson-badge" style={{ marginBottom: "12px" }}>FLAGSHIP PHILANTHROPIC INITIATIVE</span>
+              <span className="crimson-badge" style={{ marginBottom: "12px" }}>{t("csr.storyBadge")}</span>
               <h2 className="font-serif" style={{ fontSize: "2rem", color: "var(--text-primary)", marginBottom: "16px" }}>
-                The MAKE Trust Education Foundation
+                {t("csr.storyTitle")}
               </h2>
               <p style={{ color: "var(--text-secondary)", fontSize: "1rem", lineHeight: 1.85, marginBottom: "20px" }}>
-                Founded under the auspices of Chairman Ibunu Suwoothu Kamal and the Best Star Group directorate, the <strong>MAKE Trust</strong> is squarely dedicated to breaking generational poverty through education.
+                {t("csr.storyP1")}
               </p>
               <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem", lineHeight: 1.8, marginBottom: "24px" }}>
-                The trust provides full higher education scholarships, establishes computer literacy centers in rural schools, and funds vocational engineering training so young women and men can enter high-skilled trades with accredited credentials.
+                {t("csr.storyP2")}
               </p>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "0.92rem", color: "var(--text-primary)" }}>
                   <CheckCircle2 size={16} color="var(--crimson-mid)" />
-                  <span>Over 1,200 direct academic scholarships distributed to date</span>
+                  <span>{t("csr.bullet1")}</span>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "0.92rem", color: "var(--text-primary)" }}>
                   <CheckCircle2 size={16} color="var(--crimson-mid)" />
-                  <span>14 smart digital classroom installations in rural school systems</span>
+                  <span>{t("csr.bullet2")}</span>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "0.92rem", color: "var(--text-primary)" }}>
                   <CheckCircle2 size={16} color="var(--crimson-mid)" />
-                  <span>Free vocational training academies in technical electrical & NDT skills</span>
+                  <span>{t("csr.bullet3")}</span>
                 </div>
               </div>
             </div>
@@ -79,13 +82,13 @@ export default function CSRPage() {
                 }}
               >
                 <div className="font-serif" style={{ fontSize: "1.45rem", color: "var(--crimson-dark)", fontWeight: 800, marginBottom: "8px" }}>
-                  Healthcare Access Drives
+                  {t("csr.healthCardTitle")}
                 </div>
                 <p style={{ color: "var(--text-secondary)", fontSize: "0.92rem", lineHeight: 1.7, marginBottom: "20px" }}>
-                  Partnered through Best Star Pharma and Win Path Lab, our medical teams organize free biometric screenings, diabetes diagnostics, and cardiovascular assessments for blue-collar labor communities and industrial workforces across the UAE.
+                  {t("csr.healthCardDesc")}
                 </p>
                 <div style={{ borderTop: "1px solid var(--crimson-border)", paddingTop: "16px", color: "var(--crimson-dark)", fontWeight: 700, fontSize: "0.9rem" }}>
-                  ✓ 25,000+ Free Patient Screenings Administered
+                  ✓ {t("csr.healthCardStat")}
                 </div>
               </div>
             </div>

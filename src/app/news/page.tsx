@@ -19,7 +19,7 @@ export default function NewsPage() {
     : NEWS_ITEMS.filter((n) => n.category === activeCategory);
 
   return (
-    <div style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "var(--bg-deep)", minHeight: "100vh" }}>
       <Header />
 
       {/* Hero Banner */}
@@ -28,20 +28,20 @@ export default function NewsPage() {
           position: "relative",
           paddingTop: "65px",
           paddingBottom: "55px",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-card)",
           borderBottom: "1px solid var(--border-gold-subtle)",
         }}
       >
         <div className="site-container">
           <div className="section-label">
             <Bell size={14} color="var(--gold-600)" />
-            <span>EXECUTIVE DISCLOSURES & MEDIA ARCHIVE</span>
+            <span>{t("newsPage.badge")}</span>
           </div>
           <h1 className="section-title">
-            Corporate <span className="text-gold-gradient">Newsroom</span>
+            {t("newsPage.title")}
           </h1>
           <p className="section-subtitle">
-            Explore official press releases, major contract signings, strategic enterprise acquisitions, and regional joint venture announcements from the Best Star Group directorate.
+            {t("newsPage.subtitle")}
           </p>
         </div>
       </section>
@@ -57,7 +57,7 @@ export default function NewsPage() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 style={{
-                  background: activeCategory === cat ? "var(--gold-600)" : "#FFFFFF",
+                  background: activeCategory === cat ? "var(--gold-600)" : "var(--bg-card)",
                   color: activeCategory === cat ? "#FFFFFF" : "var(--text-secondary)",
                   border: activeCategory === cat ? "1px solid var(--gold-700)" : "1.5px solid var(--border-gold-subtle)",
                   borderRadius: "24px",
@@ -70,7 +70,7 @@ export default function NewsPage() {
                   boxShadow: activeCategory === cat ? "0 4px 12px rgba(184, 134, 11, 0.2)" : "none",
                 }}
               >
-                {cat}
+                {t(`newsPage.categories.${cat}`) !== `newsPage.categories.${cat}` ? t(`newsPage.categories.${cat}`) : cat}
               </button>
             ))}
           </div>
@@ -85,7 +85,7 @@ export default function NewsPage() {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
-                  background: "#FFFFFF",
+                  background: "var(--bg-card)",
                   border: "1.5px solid var(--border-gold-medium)",
                   padding: "30px",
                   transition: "transform 0.2s ease, box-shadow 0.2s ease"

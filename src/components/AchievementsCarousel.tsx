@@ -49,7 +49,7 @@ export default function AchievementsCarousel() {
       style={{
         position: "relative",
         padding: "85px 0",
-        backgroundColor: "#FAF9F6",
+        backgroundColor: "var(--bg-deep)",
         borderTop: "1px solid var(--border-gold-subtle)",
         borderBottom: "1px solid var(--border-gold-subtle)",
         overflow: "hidden",
@@ -64,13 +64,13 @@ export default function AchievementsCarousel() {
           <div>
             <div className="section-label">
               <Award size={14} color="var(--gold-600)" />
-              <span>CORPORATE RECOGNITION & SOVEREIGN CITATIONS</span>
+              <span>{t("achievementsPage.badge")}</span>
             </div>
             <h2 className="section-title" style={{ marginBottom: "10px" }}>
-              Honored for <span className="text-gold-gradient">Excellence & Safety</span>
+              {t("achievementsPage.title")}
             </h2>
             <p className="section-subtitle" style={{ maxWidth: "680px", margin: 0 }}>
-              Recognized by sovereign UAE ministries, regulatory bodies, and global certification authorities for institutional leadership, cold-chain rigor, and zero-harm engineering.
+              {t("achievementsPage.subtitle")}
             </p>
           </div>
 
@@ -92,7 +92,7 @@ export default function AchievementsCarousel() {
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold-600)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--gold-800)")}
             >
-              <span>VIEW ALL ACHIEVEMENTS ({total})</span>
+              <span>{t("achievementsExtra.viewAllWithCount")} ({total})</span>
               <ArrowRight size={13} />
             </Link>
 
@@ -103,7 +103,7 @@ export default function AchievementsCarousel() {
                 width: "42px",
                 height: "42px",
                 borderRadius: "50%",
-                backgroundColor: "#FFFFFF",
+                backgroundColor: "var(--bg-card)",
                 border: "1.5px solid var(--border-gold-medium)",
                 color: "var(--gold-700)",
                 display: "flex",
@@ -119,7 +119,7 @@ export default function AchievementsCarousel() {
                 e.currentTarget.style.borderColor = "var(--gold-600)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "#FFFFFF";
+                e.currentTarget.style.backgroundColor = "var(--bg-card)";
                 e.currentTarget.style.color = "var(--gold-700)";
                 e.currentTarget.style.borderColor = "var(--border-gold-medium)";
               }}
@@ -135,7 +135,7 @@ export default function AchievementsCarousel() {
                 width: "42px",
                 height: "42px",
                 borderRadius: "50%",
-                backgroundColor: "#FFFFFF",
+                backgroundColor: "var(--bg-card)",
                 border: "1.5px solid var(--border-gold-medium)",
                 color: "var(--gold-700)",
                 display: "flex",
@@ -151,7 +151,7 @@ export default function AchievementsCarousel() {
                 e.currentTarget.style.borderColor = "var(--gold-600)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "#FFFFFF";
+                e.currentTarget.style.backgroundColor = "var(--bg-card)";
                 e.currentTarget.style.color = "var(--gold-700)";
                 e.currentTarget.style.borderColor = "var(--border-gold-medium)";
               }}
@@ -179,7 +179,7 @@ export default function AchievementsCarousel() {
                 style={{
                   flex: "0 0 calc(33.333% - 19px)",
                   minWidth: "320px",
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   border: "1px solid var(--border-gold-medium)",
                   borderRadius: "12px",
                   overflow: "hidden",
@@ -265,7 +265,7 @@ export default function AchievementsCarousel() {
                           key={i}
                           style={{
                             padding: "6px 12px",
-                            backgroundColor: "#FAF9F6",
+                            backgroundColor: "var(--bg-surface)",
                             border: "1px solid var(--border-gold-subtle)",
                             borderRadius: "6px",
                             flex: 1,
@@ -286,7 +286,7 @@ export default function AchievementsCarousel() {
                       className="btn-luxury-gold"
                       style={{ padding: "8px 16px", fontSize: "0.75rem", width: "100%", justifyContent: "center" }}
                     >
-                      <span>INSPECT FULL CITATION</span>
+                      <span>{t("achievementsExtra.inspectFullCitation")}</span>
                       <ArrowRight size={13} />
                     </Link>
                   </div>

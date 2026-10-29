@@ -32,7 +32,8 @@
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",
     "filterSearch": "Filter & Search",
-    "searchPlaceholder": "Search enterprises by name, sector, service, or location..."
+    "searchPlaceholder": "Search enterprises by name, sector, service, or location...",
+    "achievements": "Achievements & Awards"
   },
   "nav": {
     "chairmansDesk": "Chairman's Desk",
@@ -281,14 +282,32 @@
     "item2Stat": "12,000+ Screenings Conducted",
     "item3Title": "Environmental Sustainability & Net-Zero Vision",
     "item3Desc": "Implementing green HVAC solutions via Best Star Facility Management, transitioning bus transport fleets to low-emission fuels, and eliminating single-use plastics across our corporate facilities.",
-    "item3Stat": "28% Carbon Reduction Achieved"
+    "item3Stat": "28% Carbon Reduction Achieved",
+    "storyBadge": "FLAGSHIP PHILANTHROPIC INITIATIVE",
+    "storyTitle": "The MAKE Trust Education Foundation",
+    "storyP1": "Founded under the auspices of Chairman Ibunu Suwoothu Kamal and the Best Star Group directorate, the MAKE Trust is squarely dedicated to breaking generational poverty through education.",
+    "storyP2": "The trust provides full higher education scholarships, establishes computer literacy centers in rural schools, and funds vocational engineering training so young women and men can enter high-skilled trades with accredited credentials.",
+    "bullet1": "Over 1,200 direct academic scholarships distributed to date",
+    "bullet2": "14 smart digital classroom installations in rural school systems",
+    "bullet3": "Free vocational training academies in technical electrical & NDT skills",
+    "healthCardTitle": "Healthcare Access Drives",
+    "healthCardDesc": "Partnered through Best Star Pharma and Win Path Lab, our medical teams organize free biometric screenings, diabetes diagnostics, and cardiovascular assessments for blue-collar labor communities and industrial workforces across the UAE.",
+    "healthCardStat": "25,000+ Free Patient Screenings Administered"
   },
   "careers": {
     "badge": "BE A STAR • TALENT & CULTURE",
     "title": "Build Your Legacy with Best Star Group",
     "subtitle": "We recruit visionary minds who embody integrity, entrepreneurial passion, and technical precision. Discover career advancement across our GCC and Asian subsidiaries.",
     "applyForRole": "APPLY FOR ROLE",
-    "viewAll": "VIEW ALL CURRENT OPENINGS & SCHEMES"
+    "viewAll": "VIEW ALL CURRENT OPENINGS & SCHEMES",
+    "benefitsHeading": "Employee Benefits & Schemes",
+    "benefitsSub": "Comprehensive care programs designed to support our 2,000+ professionals across the UAE, Saudi Arabia, India, and Malaysia.",
+    "benefit1Title": "Performance Appraisal Academy",
+    "benefit1Desc": "Annual 360-degree reviews, merit-based compensation increments, and structured leadership tracks across our 9 UAE operating subsidiaries.",
+    "benefit2Title": "Training & Technical Certifications",
+    "benefit2Desc": "Full sponsorship for ASNT NDT Level III, MOHAP pharmaceutical licensing, PMP, and advanced HVAC automation certifications.",
+    "benefit3Title": "Health, Wellness & Gratuity",
+    "benefit3Desc": "Comprehensive medical insurance for employees and families, free diagnostic checkups via Win Path Lab, and end-of-service gratuity."
   },
   "investor": {
     "badge": "FINANCIAL ARCHITECTURE & STRATEGIC GROWTH",
@@ -298,7 +317,13 @@
     "factsheetDesc": "Access full corporate structure, audited subsidiary capabilities, governance disclosures, and partnership enquiry procedures.",
     "downloadFactsheet": "DOWNLOAD FACTSHEET",
     "downloaded": "DOSSIER GENERATED ✓",
-    "partnerWithUs": "PARTNER WITH US"
+    "partnerWithUs": "PARTNER WITH US",
+    "valuationTitle": "Target Enterprise Valuation",
+    "valuationDesc": "Driven by expanding pharmaceutical distribution, multi-year commercial MEP contracts, and Saudi high-voltage infrastructure assets.",
+    "autonomyTitle": "Holding Autonomy & Discretion",
+    "autonomyDesc": "Private enterprise governance allowing nimble capital deployment, rapid M&A approvals, and zero public market quarter-to-quarter pressures.",
+    "resilienceTitle": "Cross-Border Resilience",
+    "resilienceDesc": "Multi-currency revenue generation across UAE Dirham (AED), Saudi Riyal (SAR), Indian Rupee (INR), and Malaysian Ringgit (MYR)."
   },
   "contact": {
     "badge": "GLOBAL REGISTRY & INQUIRIES",
@@ -349,5 +374,311 @@
     "qualityPolicy": "Quality Policy",
     "hsePolicy": "Safety, Health & Environment (HSE)",
     "makeTrust": "CSR & MAKE Trust"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "toggle": "Toggle Theme"
+  },
+  "aboutUs": {
+    "badge": "CORPORATE OVERVIEW & HERITAGE",
+    "title": "About Best Star Group FZE",
+    "subtitle": "A diversified multinational holding conglomerate operating nine leading enterprises in the United Arab Emirates and pioneering strategic joint ventures across the Kingdom of Saudi Arabia, India, and Malaysia.",
+    "leadershipBadge": "EXECUTIVE LEADERSHIP",
+    "guidingLightBadge": "GUIDING LIGHT",
+    "visionMissionTitle": "Our Vision & Corporate Mission",
+    "visionTitle": "Vision 2030",
+    "visionText": "To be the GCC premier agile holding company, recognized across our four national hubs for combining commercial speed with unwavering standards of safety, social impact, and zero-defect quality.",
+    "missionTitle": "Corporate Mission",
+    "missionText": "Deploying capital and managerial talent into essential infrastructure, high-touch healthcare, and resilient logistics, building compounding enterprise value while uplifting the communities we serve.",
+    "objectivesTitle": "Strategic Corporate Objectives",
+    "obj1": "Expand high-voltage grid infrastructure footprint in Saudi Arabia under Vision 2030 programs.",
+    "obj2": "Scale specialized retail and institutional pharmaceutical distribution network across UAE emirates.",
+    "obj3": "Maintain zero-accident safety benchmarks and advance carbon-reduction initiatives across transport fleets.",
+    "qualityHeritageBadge": "QUALITY HERITAGE",
+    "qualityPolicyTitle": "Quality Policy & Rigorous Standards",
+    "qualityPolicyDesc": "Best Star Group operates under an uncompromising Total Quality Management framework. From pharmaceutical cold-chain integrity to structural testing on oil pipelines, our processes comply with ISO 9001:2015, UAE MOHAP, and ASNT specifications.",
+    "hseBadge": "ZERO HARM CULTURE",
+    "hseTitle": "Safety, Health & Environmental (HSE) Benchmark",
+    "hseDesc": "Human life and well-being take absolute precedence in every decision we make. Our certified HSE protocols enforce mandatory daily hazard audits, advanced protective equipment, and proactive environmental mitigation across every facility and worksite."
+  },
+  "newsPage": {
+    "badge": "EXECUTIVE DISCLOSURES & MEDIA ARCHIVE",
+    "title": "Corporate Newsroom",
+    "subtitle": "Explore official press releases, major contract signings, strategic enterprise acquisitions, and regional joint venture announcements from the Best Star Group directorate.",
+    "categories": {
+      "All": "All",
+      "Contract": "Contract",
+      "Acquisition": "Acquisition",
+      "Partnership": "Partnership",
+      "Infrastructure": "Infrastructure",
+      "Fleet Expansion": "Fleet Expansion"
+    }
+  },
+  "achievementsPage": {
+    "badge": "SOVEREIGN RECOGNITION & INDUSTRY BENCHMARKS",
+    "title": "Corporate Achievements & Accolades",
+    "subtitle": "Documenting nearly two decades of institutional excellence, zero-harm safety milestones, UAE ministerial citations, and ESG leadership across Best Star Group Holding FZE and its operating subsidiaries.",
+    "breadcrumb": "Achievements & Sovereign Accolades",
+    "filterAll": "All",
+    "stat1": "MOHAP Class A Certified",
+    "stat2": "2.4M Safe Hours (DEWA Zero LTI)",
+    "stat3": "24.3% Energy Reduction Trophy"
+  },
+  "heroExtra": {
+    "sovereignHoldingFze": "Sovereign Holding FZE",
+    "hubsList": "DIFC Dubai • Riyadh • Singapore • Zurich",
+    "fiduciaryBenchmark": "AAA Fiduciary Benchmark",
+    "tenOperatingVerticals": "10 Operating Verticals",
+    "conglomerateLabel": "A DIVERSIFIED GLOBAL CONGLOMERATE",
+    "headlinePart1": "Engineering Sovereign",
+    "headlineHighlight": "Horizons.",
+    "headlinePart2": "Transforming Industrial Excellence.",
+    "description": "Best Star Group FZE orchestrates 10 high-capital subsidiaries across Power EPC, Healthcare & Life Sciences, Multimodal Cargo, Smart Facilities, and Aviation. We power critical infrastructure across the UAE, Saudi Arabia, India, and Malaysia with zero-default execution rigor.",
+    "exploreCta": "EXPLORE 10 SUBSIDIARIES",
+    "chairmanCta": "CHAIRMAN'S DIRECTIVE",
+    "incubatorCta": "VENTURE INCUBATOR",
+    "stat1Value": "AED 1.85B+",
+    "stat1Label": "Holding Asset Base",
+    "stat2Value": "10 Verticals",
+    "stat2Label": "Operating Subsidiaries",
+    "stat3Value": "3,400+",
+    "stat3Label": "Engineers & Specialists",
+    "stat4Value": "4 Hubs",
+    "stat4Label": "Sovereign Jurisdictions",
+    "verifiedPortfolio": "VERIFIED PORTFOLIO",
+    "directorate": "Best Star Group Directorate",
+    "inspectDivision": "Inspect Division",
+    "verticals": {
+      "power": {
+        "name": "Best Star Power & Infrastructure",
+        "sector": "Extra High Voltage EPC",
+        "metric": "380kV",
+        "metricLabel": "Substation Packages Delivered",
+        "description": "Engineering national-scale electrical grids, high-voltage transformers, and turnkey substation networks across Saudi Arabia and the UAE."
+      },
+      "pharma": {
+        "name": "Best Star Pharma & Life Sciences",
+        "sector": "Healthcare & Diagnostics",
+        "metric": "100% GDP",
+        "metricLabel": "MOHAP Validated Cold Chain",
+        "description": "Sovereign-grade pharmaceutical importation, automated clinical diagnostics, and critical temperature-controlled pharmaceutical supply lines."
+      },
+      "facility": {
+        "name": "Best Star Integrated Facilities",
+        "sector": "Smart Infrastructure & MEP",
+        "metric": "4.8M+ Sq.Ft",
+        "metricLabel": "Managed Commercial Real Estate",
+        "description": "Enterprise asset reliability, HVAC SCADA monitoring, energy-efficiency retrofits, and comprehensive facility management for mega-developments."
+      },
+      "logistics": {
+        "name": "Best Star Cargo & Marine Fleet",
+        "sector": "Logistics & Multimodal Transit",
+        "metric": "120+ Units",
+        "metricLabel": "Heavy Commercial Transport Fleet",
+        "description": "Seamless overland freight, maritime transit clearance, and express logistics connecting GCC economic corridors to Asia-Pacific trade hubs."
+      },
+      "holding": {
+        "name": "Best Star Sovereign Holding",
+        "sector": "Global Executive Headquarters",
+        "metric": "AED 1.85B+",
+        "metricLabel": "Consolidated Holding Asset Base",
+        "description": "Anchored at DIFC Dubai with direct sovereign oversight across 10 market-leading industrial subsidiaries spanning 4 global jurisdictions."
+      }
+    }
+  },
+  "horizonSection": {
+    "badge": "CONGLOMERATE STRATEGIC HORIZON",
+    "title": "Strategic Trajectory & Enterprise Vision",
+    "subtitle": "A disciplined architecture of sustained multi-sector expansion, sovereign capital allocation, and cross-border commercial resilience.",
+    "tabMilestones": "HISTORICAL TIMELINE & HORIZON 2030",
+    "tabSynergies": "CROSS-SECTOR CONGLOMERATE SYNERGY",
+    "tabGovernance": "RISK & FIDUCIARY GOVERNANCE",
+    "milestones": [
+      {
+        "year": "2008",
+        "title": "Foundation of Best Star Enterprise",
+        "desc": "Inception in the UAE free zone with specialized technical trading and engineering operations.",
+        "badge": "Inception"
+      },
+      {
+        "year": "2013",
+        "title": "Cross-Border Infrastructure Expansion",
+        "desc": "Commissioned landmark Extra High Voltage (380kV) substation packages in Riyadh, Kingdom of Saudi Arabia.",
+        "badge": "Regional Power"
+      },
+      {
+        "year": "2017",
+        "title": "Integrated Facilities & Automotive Fleets",
+        "desc": "Established Best Star Facility Management and consolidated 120+ commercial passenger transit coaches.",
+        "badge": "Fleet & MEP"
+      },
+      {
+        "year": "2021",
+        "title": "Pharmaceuticals & Diagnostic Life Sciences",
+        "desc": "Founded Best Star Pharma Trading and entered equal equity joint-venture with Win Path Diagnostic Labs.",
+        "badge": "Healthcare"
+      },
+      {
+        "year": "2026",
+        "title": "Sovereign Conglomerate Holding FZE",
+        "desc": "Consolidation of 10 operating subsidiaries commanding leadership across UAE, KSA, India, and Malaysia.",
+        "badge": "Holding FZE"
+      },
+      {
+        "year": "2030",
+        "title": "Horizon 2030: AED 2.5B Enterprise Roadmap",
+        "desc": "Strategic acceleration towards public capital market listing, automated green energy hubs, and aerospace leasing.",
+        "badge": "Future Horizon"
+      }
+    ],
+    "synergies": [
+      {
+        "title": "Cold-Chain Healthcare Logistics",
+        "pair": "Best Star Pharma + Best Star Cargo",
+        "desc": "Seamless end-to-end import, temperature-controlled bonded warehousing, and rapid retail pharmacy distribution.",
+        "tag": "Biopharma Transit"
+      },
+      {
+        "title": "Smart Chiller & High-Voltage Automation",
+        "pair": "Best Star FM + IGTS Technical + High-Voltage Power",
+        "desc": "Synchronized MEP contracting, ASNT certified non-destructive testing, and substation energy efficiency.",
+        "tag": "Mission-Critical MEP"
+      },
+      {
+        "title": "Dignitary Tourism & Aviation Chartering",
+        "pair": "Best Star Tourism + Best Star Aviation",
+        "desc": "Ultra-luxury VIP global itineraries combining private jet charters, luxury ground coach fleets, and concierge access.",
+        "tag": "Prestige Travel"
+      },
+      {
+        "title": "Automotive Workshops & Commercial Fleets",
+        "pair": "Best Star Auto Hub + Al Saqer Buses",
+        "desc": "In-house Euro-5 vehicle maintenance, certified diagnostic bays, and continuous 99.8% fleet uptime SLAs.",
+        "tag": "Mobility Engineering"
+      }
+    ],
+    "govCard1Title": "Sovereign Compliance",
+    "govCard1Desc": "Conforming strictly to UAE Federal Law No. 8, UAE Ministry of Health and Prevention (MOHAP) regulations, and ISO 9001:2015 audited workflows.",
+    "govCard2Title": "Tier-1 Banking Alliances",
+    "govCard2Desc": "Strategic syndicated credit facilities and treasury partnerships with prominent regional financial institutions across the UAE and GCC.",
+    "govCard3Title": "Cross-Border Fiduciary Oversight",
+    "govCard3Desc": "Independent audit committees overseeing subsidiary financial reporting, risk governance, and intellectual property (IP) protection.",
+    "govCta": "READ COMPLETE GOVERNANCE & HSE CHARTER"
+  },
+  "investorExtra": {
+    "pillar1Badge": "Capital Allocation",
+    "pillar1Title": "Prudent Asset Diversification",
+    "pillar1Desc": "Revenues are balanced across 10 operating companies spanning healthcare retail, recurring MEP contracts, long-term commercial transit leasing, and national high-voltage infrastructure.",
+    "pillar1Check": "✓ Low Beta & High Free Cash Flow",
+    "pillar2Badge": "Growth Strategy",
+    "pillar2Title": "Open Innovation Partnerships",
+    "pillar2Desc": "Our hybrid equity model brings capital, governance, and operational execution to high-growth regional joint ventures in the UAE, Saudi Arabia, India, and Malaysia.",
+    "pillar2Check": "✓ Co-Investment & Strategic Synergies",
+    "pillar3Badge": "Governance",
+    "pillar3Title": "Holding Company Architecture",
+    "pillar3Desc": "Structured under UAE Free Zone Enterprise (FZE) holding guidelines, ensuring strict regulatory ring-fencing, centralized risk management, and audited fiscal reporting.",
+    "pillar3Check": "✓ Zero Debt on Core Holding Assets",
+    "factsheetStripLabel": "OFFICIAL FACTSHEET & INVESTOR DOSSIER"
+  },
+  "partnerBanner": {
+    "badge": "INSTITUTIONAL PARTNERSHIP & ENGAGEMENT",
+    "title": "Collaborate with",
+    "companyName": "Best Star Group FZE",
+    "subtitle": "Whether entering strategic joint ventures, registering as an accredited industrial supplier, or pitching next-generation infrastructure technology, our executive directorate provides institutional certainty and capital capability.",
+    "card1Badge": "Procurement & Tenders",
+    "card1Title": "Commercial Joint Ventures & RFPs",
+    "card1Desc": "Accredited vendor qualification, EPC subcontractor registration, and institutional public-private partnership (PPP) tender submissions across GCC energy and civil projects.",
+    "card1Cta": "ACCESS COMMERCIAL INQUIRY FORM",
+    "card2Pill": "AED 50M+ ALLOCATION",
+    "card2Badge": "Corporate Ventures",
+    "card2Title": "Submit Your Business Blueprint",
+    "card2Desc": "Co-development capital, commercial scaling, and executive board sponsorship for disruptive technology in AI SCADA, clean mobility, nanomedicine, and green hydrogen.",
+    "card2Cta": "EXPLORE & PITCH IDEAS",
+    "card3Badge": "Executive Desk Active",
+    "card3Title": "AI Concierge & Live Human Officer",
+    "card3Desc": "Converse in real-time on our dedicated separate screen desk with Dr. Tariq Al-Mansoor (Senior VP) or query our verified sovereign holding intelligence bot.",
+    "card3Cta": "OPEN DEDICATED CHAT DESK",
+    "trust1": "256-Bit TLS Sovereign Encryption",
+    "trust2": "AAA Sovereign Credit Rating Benchmark",
+    "trust3": "DIFC Bilateral Non-Disclosure Protocol",
+    "switchboard": "Direct Switchboard:"
+  },
+  "valuesExtra": {
+    "standard1": "Continuous Co-Investment",
+    "standard2": "ISO 9001:2015 & MOHAP",
+    "standard3": "Zero Harm Mandate",
+    "standard4": "99.8% Client Retention"
+  },
+  "csrExtra": {
+    "badge1": "Education & Skills",
+    "badge2": "Healthcare Outreach",
+    "badge3": "Eco Responsibility"
+  },
+  "achievementsExtra": {
+    "viewAllWithCount": "VIEW ALL ACHIEVEMENTS",
+    "inspectFullCitation": "INSPECT FULL CITATION"
+  },
+  "navExtra": {
+    "operatingVerticals": "OPERATING BUSINESS VERTICALS",
+    "viewAll10": "View All 10 →",
+    "globalExpansion": "Global Expansion & Quality",
+    "isoStandards": "ISO 9001:2015 Benchmarks",
+    "zeroHarm": "Zero Harm Standard",
+    "achievementsTitle": "Achievements & Citations",
+    "sovereignRecords": "Sovereign Records & Awards"
+  },
+  "contactExtra": {
+    "formTitle": "Corporate & Commercial Inquiry Form",
+    "formSubtitle": "Please provide complete details so we can route your submission directly to the relevant subsidiary directorate.",
+    "selectPlaceholder": "Select Target Subsidiary / Sector",
+    "globalHq": "Global Corporate Headquarters (UAE)",
+    "globalHqAddress": "Best Star Group FZE, Executive Tower, Sheikh Zayed Road, Dubai & Hamriyah Free Zone, Sharjah, United Arab Emirates.",
+    "ksaHub": "Kingdom of Saudi Arabia Hub (KSA)",
+    "ksaHubAddress": "King Abdullah Financial City (KAFC) District, Northern Ring Road, Riyadh, Kingdom of Saudi Arabia.",
+    "businessHours": "Operating Business Hours",
+    "businessHoursWeekdays": "Monday – Friday: 08:30 AM – 06:00 PM (GST / UTC+4)",
+    "emergency247": "Emergency Operations & Logistics Despatches: 24/7/365 On-Call"
+  },
+  "chatWidget": {
+    "botInitialGreeting": "Greetings. I am BestStar Sovereign AI Concierge. How can I assist your enterprise or investment inquiry today?",
+    "aiConcierge": "AI Executive Concierge",
+    "liveOfficer": "Live Officer Desk",
+    "sovereignDeskActive": "24/7 Sovereign Desk",
+    "fullScreen": "Full Screen",
+    "launchSeparateScreen": "Launch Dedicated Separate Screen",
+    "openChatLink": "Open /chat ↗",
+    "aiBotTab": "🤖 AI Bot",
+    "officerTab": "👨‍💼 Senior VP Desk",
+    "placeholderAi": "Ask AI about subsidiaries...",
+    "placeholderOfficer": "Message Dr. Tariq Al-Mansoor...",
+    "launcherTitle": "AI & Live Desk",
+    "launcherSubtitle": "Separate Screen Available ↗"
+  },
+  "accreditations": {
+    "badge": "SOVEREIGN REGULATORY & INSTITUTIONAL CLEARANCES",
+    "title": "Certified Across Global Industry Benchmarks",
+    "subtitle": "Best Star Group operating subsidiaries maintain active regulatory licenses, tier-1 vendor codes, and ISO quality accreditations spanning civil aviation, petroleum, healthcare, and infrastructure.",
+    "verified": "Verified Active Clearances",
+    "auditPassed": "100% Compliance Score"
+  },
+  "featuredNews": {
+    "badge": "EXECUTIVE PRESS & MEDIA HUB",
+    "title": "Latest Corporate Dispatches & Market Filings",
+    "subtitle": "Official announcements, major multi-million sovereign contract awards, strategic acquisitions, and fleet expansion bulletins.",
+    "readMore": "Read Full Dispatch",
+    "viewAll": "View All Press Releases",
+    "minRead": "min read"
+  },
+  "ventureIncubator": {
+    "badge": "STRATEGIC INNOVATION & VENTURE LAB",
+    "title": "Proprietary Inventions & High-Impact Ventures",
+    "subtitle": "Commercializing next-generation technologies across Edge AI, Autonomous Drone Logistics, and Marine Cleantech.",
+    "tamLabel": "Addressable Market (TAM)",
+    "targetTimeline": "Target Rollout",
+    "viewDossier": "Inspect Technical Dossier",
+    "submitPitch": "Submit Venture Proposal",
+    "exploreLab": "Explore All 5 Innovation Programs",
+    "stage": "Readiness Stage"
   }
 }

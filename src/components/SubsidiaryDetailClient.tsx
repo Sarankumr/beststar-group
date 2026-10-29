@@ -14,18 +14,36 @@ import {
   Sparkles
 } from "lucide-react";
 import { SUBSIDIARIES, Subsidiary } from "@/data/companyData";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Subsidiary }) {
+  const { t, isRtl } = useLanguage();
   const relatedSubsidiaries = SUBSIDIARIES.filter((s) => s.id !== subsidiary.id).slice(0, 3);
 
+  const subName = t(`subsidiaryItems.${subsidiary.id}.name`) !== `subsidiaryItems.${subsidiary.id}.name`
+    ? t(`subsidiaryItems.${subsidiary.id}.name`)
+    : subsidiary.name;
+  const subShortName = t(`subsidiaryItems.${subsidiary.id}.shortName`) !== `subsidiaryItems.${subsidiary.id}.shortName`
+    ? t(`subsidiaryItems.${subsidiary.id}.shortName`)
+    : subsidiary.shortName;
+  const subTagline = t(`subsidiaryItems.${subsidiary.id}.tagline`) !== `subsidiaryItems.${subsidiary.id}.tagline`
+    ? t(`subsidiaryItems.${subsidiary.id}.tagline`)
+    : subsidiary.tagline;
+  const subDesc = t(`subsidiaryItems.${subsidiary.id}.description`) !== `subsidiaryItems.${subsidiary.id}.description`
+    ? t(`subsidiaryItems.${subsidiary.id}.description`)
+    : subsidiary.description;
+  const subOverview = t(`subsidiaryItems.${subsidiary.id}.detailedOverview`) !== `subsidiaryItems.${subsidiary.id}.detailedOverview`
+    ? t(`subsidiaryItems.${subsidiary.id}.detailedOverview`)
+    : subsidiary.detailedOverview;
+
   return (
-    <div style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "var(--bg-deep)", minHeight: "100vh" }}>
       <Header />
 
       {/* Breadcrumb & Navigation */}
       <div 
         style={{
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-card)",
           borderBottom: "1px solid var(--border-gold-subtle)",
           padding: "12px 0",
           fontSize: "0.82rem",
@@ -33,11 +51,11 @@ export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Sub
         }}
       >
         <div className="site-container" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Link href="/" style={{ color: "var(--text-secondary)", textDecoration: "none" }}>Home</Link>
+          <Link href="/" style={{ color: "var(--text-secondary)", textDecoration: "none" }}>{t("common.home")}</Link>
           <span>/</span>
-          <Link href="/subsidiaries" style={{ color: "var(--text-secondary)", textDecoration: "none" }}>Subsidiaries</Link>
+          <Link href="/subsidiaries" style={{ color: "var(--text-secondary)", textDecoration: "none" }}>{t("common.sectors")}</Link>
           <span>/</span>
-          <span style={{ color: "var(--gold-800)", fontWeight: 700 }}>{subsidiary.name}</span>
+          <span style={{ color: "var(--gold-800)", fontWeight: 700 }}>{subName}</span>
         </div>
       </div>
 
@@ -45,7 +63,7 @@ export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Sub
       <section 
         style={{
           position: "relative",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-card)",
           borderBottom: "1px solid var(--border-gold-subtle)",
           paddingTop: "40px",
           paddingBottom: "50px",
@@ -67,7 +85,7 @@ export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Sub
             }}
           >
             <ArrowLeft size={15} />
-            <span>BACK TO ALL SUBSIDIARIES</span>
+            <span>{t("subsidiaries.backToAll")}</span>
           </Link>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "36px", alignItems: "center" }} className="sub-hero-grid">
@@ -80,15 +98,15 @@ export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Sub
               </div>
 
               <h1 className="section-title" style={{ fontSize: "clamp(2rem, 3.5vw, 2.8rem)", marginBottom: "10px" }}>
-                {subsidiary.name}
+                {subName}
               </h1>
 
               <p style={{ color: "var(--gold-700)", fontSize: "1.1rem", fontWeight: 700, marginBottom: "16px" }}>
-                {subsidiary.tagline}
+                {subTagline}
               </p>
 
               <p style={{ color: "var(--text-secondary)", fontSize: "1rem", lineHeight: 1.7, maxWidth: "680px", marginBottom: "24px" }}>
-                {subsidiary.description}
+                {subDesc}
               </p>
 
               {/* Meta Quick Info */}
@@ -105,15 +123,15 @@ export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Sub
                 }}
               >
                 <div>
-                  <span style={{ color: "var(--text-muted)" }}>Headquarters: </span>
+                  <span style={{ color: "var(--text-muted)" }}>{t("subsidiaries.headquartersLabel")} </span>
                   <strong style={{ color: "var(--text-primary)" }}>{subsidiary.headquarters}</strong>
                 </div>
                 <div>
-                  <span style={{ color: "var(--text-muted)" }}>Established: </span>
+                  <span style={{ color: "var(--text-muted)" }}>{t("subsidiaries.establishedLabel")} </span>
                   <strong style={{ color: "var(--gold-800)" }}>{subsidiary.establishedDate}</strong>
                 </div>
                 <div>
-                  <span style={{ color: "var(--text-muted)" }}>Operating Regions: </span>
+                  <span style={{ color: "var(--text-muted)" }}>{t("subsidiaries.operatingRegionsLabel")} </span>
                   <strong style={{ color: "var(--text-primary)" }}>{subsidiary.operatingCountries.join(", ")}</strong>
                 </div>
               </div>
@@ -136,7 +154,7 @@ export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Sub
                 {subsidiary.image ? (
                   <Image
                     src={subsidiary.image}
-                    alt={subsidiary.name}
+                    alt={subName}
                     fill
                     sizes="(max-width: 768px) 100vw, 600px"
                     style={{ objectFit: "cover" }}
@@ -153,7 +171,7 @@ export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Sub
 
       {/* Key Metrics Strip if Available */}
       {subsidiary.stats && (
-        <section style={{ backgroundColor: "#FFFFFF", borderBottom: "1px solid var(--border-gold-subtle)", padding: "26px 0" }}>
+        <section style={{ backgroundColor: "var(--bg-surface)", borderBottom: "1px solid var(--border-gold-subtle)", padding: "26px 0" }}>
           <div className="site-container">
             <div 
               style={{
@@ -186,16 +204,16 @@ export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Sub
             
             {/* Left Column: Full Dossier */}
             <div>
-              <div className="luxe-card" style={{ background: "#FFFFFF", border: "1.5px solid var(--border-gold-medium)", padding: "36px", marginBottom: "32px" }}>
+              <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1.5px solid var(--border-gold-medium)", padding: "36px", marginBottom: "32px" }}>
                 <h2 className="font-serif" style={{ fontSize: "1.45rem", color: "var(--text-primary)", marginBottom: "16px" }}>
-                  Comprehensive Operational Overview
+                  {t("subsidiaries.overviewTitle")}
                 </h2>
                 <p style={{ color: "var(--text-secondary)", fontSize: "1rem", lineHeight: 1.85, marginBottom: "28px" }}>
-                  {subsidiary.detailedOverview}
+                  {subOverview}
                 </p>
 
                 <h3 className="font-serif" style={{ fontSize: "1.2rem", color: "var(--gold-800)", marginBottom: "16px" }}>
-                  Key Milestones & Operational Achievements
+                  {t("subsidiaries.milestonesTitle")}
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "28px" }}>
                   {subsidiary.keyHighlights.map((hl, i) => (
@@ -207,7 +225,7 @@ export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Sub
                 </div>
 
                 <h3 className="font-serif" style={{ fontSize: "1.2rem", color: "var(--gold-800)", marginBottom: "16px" }}>
-                  Specialized Capabilities & Service Offerings
+                  {t("subsidiaries.capabilitiesTitle")}
                 </h3>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "10px" }}>
                   {subsidiary.capabilities.map((cap, i) => (
@@ -234,7 +252,7 @@ export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Sub
             <div>
               <div 
                 style={{
-                  background: "#FFFFFF",
+                  background: "var(--bg-card)",
                   border: "2px solid var(--border-gold-medium)",
                   borderRadius: "10px",
                   padding: "30px",
@@ -245,27 +263,27 @@ export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Sub
               >
                 <div className="section-label" style={{ marginBottom: "6px" }}>
                   <Sparkles size={13} />
-                  <span>DIRECT COMMERCIAL RFP</span>
+                  <span>{t("subsidiaries.directRfpTitle")}</span>
                 </div>
                 <h3 className="font-serif" style={{ fontSize: "1.35rem", color: "var(--text-primary)", marginBottom: "12px" }}>
-                  Inquire with {subsidiary.shortName}
+                  {t("subsidiaries.inquireWith")} {subShortName}
                 </h3>
                 <p style={{ color: "var(--text-secondary)", fontSize: "0.88rem", lineHeight: 1.6, marginBottom: "20px" }}>
-                  Direct your tender specifications, contract requirements, or commercial partnership queries directly to this operating board.
+                  {t("subsidiaries.inquireDesc")}
                 </p>
 
                 <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "24px" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.85rem", color: "var(--text-secondary)" }}>
                     <ShieldCheck size={16} color="var(--gold-600)" />
-                    <span>Direct Executive Routing</span>
+                    <span>{t("subsidiaries.executiveRouting")}</span>
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.85rem", color: "var(--text-secondary)" }}>
                     <ShieldCheck size={16} color="var(--gold-600)" />
-                    <span>SLA Guaranteed Response (24h)</span>
+                    <span>{t("subsidiaries.slaGuaranteed")}</span>
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.85rem", color: "var(--text-secondary)" }}>
                     <ShieldCheck size={16} color="var(--gold-600)" />
-                    <span>MOHAP & ISO Certified Disclosures</span>
+                    <span>{t("subsidiaries.certifiedDisclosures")}</span>
                   </div>
                 </div>
 
@@ -274,7 +292,7 @@ export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Sub
                   className="btn-luxury-gold"
                   style={{ width: "100%", textAlign: "center", padding: "13px" }}
                 >
-                  <span>SUBMIT COMMERCIAL INQUIRY</span>
+                  <span>{t("subsidiaries.submitCommercialInquiry")}</span>
                   <ArrowRight size={15} />
                 </Link>
               </div>
@@ -286,14 +304,14 @@ export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Sub
       </section>
 
       {/* Related Subsidiaries */}
-      <section style={{ backgroundColor: "#FFFFFF", borderTop: "1px solid var(--border-gold-subtle)", padding: "60px 0" }}>
+      <section style={{ backgroundColor: "var(--bg-surface)", borderTop: "1px solid var(--border-gold-subtle)", padding: "60px 0" }}>
         <div className="site-container">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "28px" }}>
             <h3 className="font-serif" style={{ fontSize: "1.35rem", color: "var(--text-primary)", margin: 0 }}>
-              Other Conglomerate Verticals
+              {t("subsidiaries.otherVerticals")}
             </h3>
             <Link href="/subsidiaries" style={{ color: "var(--gold-700)", fontWeight: 700, fontSize: "0.85rem", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "4px" }}>
-              <span>VIEW ALL (10)</span>
+              <span>{t("subsidiaries.viewAll10")}</span>
               <ArrowRight size={14} />
             </Link>
           </div>
@@ -308,7 +326,7 @@ export default function SubsidiaryDetailClient({ subsidiary }: { subsidiary: Sub
                   textDecoration: "none",
                   border: "1px solid var(--border-gold-medium)",
                   padding: "20px",
-                  background: "#FFFFFF",
+                  background: "var(--bg-card)",
                 }}
               >
                 <span className="gold-badge" style={{ marginBottom: "8px", fontSize: "0.65rem" }}>{rel.sector}</span>

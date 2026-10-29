@@ -28,7 +28,7 @@ export default function TermsAndConditionsPage() {
   };
 
   return (
-    <div style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "var(--bg-deep)", minHeight: "100vh" }}>
       <Header />
 
       {/* Hero Header */}
@@ -37,7 +37,7 @@ export default function TermsAndConditionsPage() {
           position: "relative",
           paddingTop: "60px",
           paddingBottom: "50px",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-surface)",
           borderBottom: "1px solid var(--border-gold-subtle)",
         }}
       >
@@ -104,7 +104,7 @@ export default function TermsAndConditionsPage() {
                 type="button"
                 onClick={handlePrint}
                 style={{
-                  background: "#FFFFFF",
+                  background: "var(--bg-card)",
                   border: "1.5px solid var(--border-gold-medium)",
                   color: "var(--text-primary)",
                   padding: "9px 18px",
@@ -122,7 +122,7 @@ export default function TermsAndConditionsPage() {
                   e.currentTarget.style.borderColor = "var(--gold-500)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "#FFFFFF";
+                  e.currentTarget.style.backgroundColor = "var(--bg-card)";
                   e.currentTarget.style.borderColor = "var(--border-gold-medium)";
                 }}
               >
@@ -136,12 +136,12 @@ export default function TermsAndConditionsPage() {
       </section>
 
       {/* Legal Text Body */}
-      <section className="section-spacing" style={{ backgroundColor: "#FAF8F5" }}>
+      <section className="section-spacing" style={{ backgroundColor: "var(--bg-deep)" }}>
         <div className="site-container" style={{ maxWidth: "980px" }}>
           
           <div 
             style={{
-              backgroundColor: "#FFFFFF",
+              backgroundColor: "var(--bg-card)",
               borderRadius: "12px",
               border: "1px solid var(--border-gold-medium)",
               padding: "48px 40px",
@@ -215,7 +215,7 @@ export default function TermsAndConditionsPage() {
                 Any quotation, rate sheet, operational capability summary, or estimate transmitted via our Contact Desk, Subsidiaries Inquiries, or Investor Centre constitutes an invitation to treat and does not constitute a legally binding offer until executed via a formal Master Service Agreement (MSA) signed by an authorized signatory.
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginTop: "14px" }}>
-                <div style={{ padding: "14px", backgroundColor: "#FAF9F6", borderRadius: "6px", border: "1px solid var(--border-gold-subtle)" }}>
+                <div style={{ padding: "14px", backgroundColor: "var(--bg-card)", borderRadius: "6px", border: "1px solid var(--border-gold-subtle)" }}>
                   <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--gold-800)", marginBottom: "4px" }}>
                     Healthcare & Pharma
                   </div>
@@ -223,7 +223,7 @@ export default function TermsAndConditionsPage() {
                     Subject to UAE Ministry of Health and Prevention (MOHAP) and Dubai Health Authority (DHA) cold-chain compliance standards.
                   </div>
                 </div>
-                <div style={{ padding: "14px", backgroundColor: "#FAF9F6", borderRadius: "6px", border: "1px solid var(--border-gold-subtle)" }}>
+                <div style={{ padding: "14px", backgroundColor: "var(--bg-card)", borderRadius: "6px", border: "1px solid var(--border-gold-subtle)" }}>
                   <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--gold-800)", marginBottom: "4px" }}>
                     Engineering & Infrastructure
                   </div>

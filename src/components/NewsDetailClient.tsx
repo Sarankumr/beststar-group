@@ -53,13 +53,13 @@ export default function NewsDetailClient({ newsItem }: NewsDetailClientProps) {
   const otherReleases = NEWS_ITEMS.filter((n) => n.id !== newsItem.id).slice(0, 3);
 
   return (
-    <div style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "var(--bg-deep)", minHeight: "100vh" }}>
       <Header />
 
       {/* Breadcrumb Navigation Bar */}
       <div 
         style={{
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-surface)",
           borderBottom: "1px solid var(--border-gold-subtle)",
           padding: "12px 0",
           fontSize: "0.82rem",
@@ -268,7 +268,7 @@ export default function NewsDetailClient({ newsItem }: NewsDetailClientProps) {
               <div 
                 className="luxe-card" 
                 style={{ 
-                  background: "#FFFFFF", 
+                  background: "var(--bg-card)", 
                   border: "1.5px solid var(--border-gold-medium)", 
                   padding: "36px" 
                 }}
@@ -393,7 +393,7 @@ export default function NewsDetailClient({ newsItem }: NewsDetailClientProps) {
                       href={`/news/${rel.id}`}
                       className="luxe-card"
                       style={{
-                        background: "#FFFFFF",
+                        background: "var(--bg-card)",
                         border: "1.5px solid var(--border-gold-subtle)",
                         padding: "20px",
                         textDecoration: "none",
@@ -429,7 +429,7 @@ export default function NewsDetailClient({ newsItem }: NewsDetailClientProps) {
               <div 
                 className="luxe-card"
                 style={{
-                  background: "#FFFFFF",
+                  background: "var(--bg-card)",
                   border: "2px solid var(--border-gold-medium)",
                   boxShadow: "0 18px 45px rgba(0, 0, 0, 0.08)",
                   borderRadius: "12px",
@@ -469,7 +469,7 @@ export default function NewsDetailClient({ newsItem }: NewsDetailClientProps) {
                       Your inquiry regarding <strong>{newsItem.referenceNo || newsItem.category}</strong> has been assigned to the Group Communications Officer.
                     </p>
 
-                    <div style={{ background: "#FFFFFF", padding: "12px", borderRadius: "6px", border: "1px dashed var(--gold-400)", marginBottom: "16px" }}>
+                    <div style={{ background: "var(--bg-surface)", padding: "12px", borderRadius: "6px", border: "1px dashed var(--gold-400)", marginBottom: "16px" }}>
                       <div style={{ fontSize: "0.7rem", color: "var(--text-muted)", textTransform: "uppercase" }}>Official Tracking Reference</div>
                       <div style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--gold-800)", fontFamily: "monospace" }}>
                         {submissionRef}
@@ -503,7 +503,7 @@ export default function NewsDetailClient({ newsItem }: NewsDetailClientProps) {
                           border: "1.5px solid var(--border-gold-medium)",
                           borderRadius: "4px",
                           fontSize: "0.88rem",
-                          background: "#FFFFFF",
+                          background: "var(--bg-surface)",
                           color: "var(--text-primary)",
                           outline: "none"
                         }}
@@ -526,7 +526,7 @@ export default function NewsDetailClient({ newsItem }: NewsDetailClientProps) {
                           border: "1.5px solid var(--border-gold-medium)",
                           borderRadius: "4px",
                           fontSize: "0.88rem",
-                          background: "#FFFFFF",
+                          background: "var(--bg-surface)",
                           color: "var(--text-primary)",
                           outline: "none"
                         }}
@@ -550,7 +550,7 @@ export default function NewsDetailClient({ newsItem }: NewsDetailClientProps) {
                             border: "1.5px solid var(--border-gold-medium)",
                             borderRadius: "4px",
                             fontSize: "0.88rem",
-                            background: "#FFFFFF",
+                            background: "var(--bg-surface)",
                             color: "var(--text-primary)",
                             outline: "none"
                           }}
@@ -573,7 +573,7 @@ export default function NewsDetailClient({ newsItem }: NewsDetailClientProps) {
                             border: "1.5px solid var(--border-gold-medium)",
                             borderRadius: "4px",
                             fontSize: "0.88rem",
-                            background: "#FFFFFF",
+                            background: "var(--bg-surface)",
                             color: "var(--text-primary)",
                             outline: "none"
                           }}
@@ -614,7 +614,7 @@ export default function NewsDetailClient({ newsItem }: NewsDetailClientProps) {
                           border: "1.5px solid var(--border-gold-medium)",
                           borderRadius: "4px",
                           fontSize: "0.88rem",
-                          background: "#FFFFFF",
+                          background: "var(--bg-surface)",
                           color: "var(--text-primary)",
                           resize: "vertical",
                           outline: "none"

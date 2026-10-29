@@ -11,21 +11,21 @@ export default function CSRSection() {
   const csrItems = [
     {
       icon: <GraduationCap size={26} color="var(--crimson-mid)" />,
-      badge: "Education & Skills",
+      badge: t("csrExtra.badge1"),
       title: t("csr.item1Title"),
       desc: t("csr.item1Desc"),
       stat: t("csr.item1Stat")
     },
     {
       icon: <Stethoscope size={26} color="var(--crimson-mid)" />,
-      badge: "Healthcare Outreach",
+      badge: t("csrExtra.badge2"),
       title: t("csr.item2Title"),
       desc: t("csr.item2Desc"),
       stat: t("csr.item2Stat")
     },
     {
       icon: <Leaf size={26} color="var(--crimson-mid)" />,
-      badge: "Eco Responsibility",
+      badge: t("csrExtra.badge3"),
       title: t("csr.item3Title"),
       desc: t("csr.item3Desc"),
       stat: t("csr.item3Stat")
@@ -38,7 +38,7 @@ export default function CSRSection() {
       className="section-spacing"
       style={{
         position: "relative",
-        backgroundColor: "#FAF8F5",
+        backgroundColor: "var(--bg-deep)",
         borderTop: "1px solid var(--border-gold-subtle)",
         borderBottom: "1px solid var(--border-gold-subtle)",
       }}
@@ -75,7 +75,7 @@ export default function CSRSection() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
-                backgroundColor: "#FFFFFF",
+                backgroundColor: "var(--bg-card)",
                 border: "1.5px solid var(--border-gold-medium)",
               }}
             >

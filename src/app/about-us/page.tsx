@@ -23,7 +23,7 @@ export default function AboutUsPage() {
   const { t } = useLanguage();
 
   return (
-    <div style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "var(--bg-deep)", minHeight: "100vh" }}>
       <Header />
 
       {/* Page Hero Banner */}
@@ -32,7 +32,7 @@ export default function AboutUsPage() {
           position: "relative",
           paddingTop: "70px",
           paddingBottom: "70px",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-card)",
           borderBottom: "1px solid var(--border-gold-subtle)",
           overflow: "hidden",
         }}
@@ -40,13 +40,13 @@ export default function AboutUsPage() {
         <div className="site-container">
           <div className="section-label">
             <Compass size={14} />
-            <span>CORPORATE OVERVIEW & HERITAGE</span>
+            <span>{t("aboutUs.badge")}</span>
           </div>
           <h1 className="section-title">
-            About <span className="text-gold-gradient">Best Star Group FZE</span>
+            {t("aboutUs.title")}
           </h1>
           <p className="section-subtitle">
-            A diversified multinational holding conglomerate operating nine leading enterprises in the United Arab Emirates and pioneering strategic joint ventures across the Kingdom of Saudi Arabia, India, and Malaysia.
+            {t("aboutUs.subtitle")}
           </p>
         </div>
       </section>
@@ -57,7 +57,7 @@ export default function AboutUsPage() {
           
           <div className="section-label">
             <Award size={14} />
-            <span>EXECUTIVE LEADERSHIP</span>
+            <span>{t("aboutUs.leadershipBadge")}</span>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "40px", alignItems: "center" }} className="about-grid">
@@ -66,7 +66,7 @@ export default function AboutUsPage() {
             <div>
               <div 
                 style={{
-                  background: "#FFFFFF",
+                  background: "var(--bg-card)",
                   border: "2px solid var(--border-gold-medium)",
                   borderRadius: "14px",
                   padding: "20px",
@@ -96,13 +96,13 @@ export default function AboutUsPage() {
 
                 <div style={{ textAlign: "center", borderTop: "1px solid var(--border-gold-subtle)", paddingTop: "14px" }}>
                   <h3 className="font-serif" style={{ fontSize: "1.4rem", color: "var(--text-primary)", margin: 0 }}>
-                    {CHAIRMAN_MESSAGE.author}
+                    {t("chairman.author")}
                   </h3>
                   <div style={{ color: "var(--gold-700)", fontWeight: 700, fontSize: "0.88rem", marginTop: "2px" }}>
-                    {CHAIRMAN_MESSAGE.title}
+                    {t("chairman.designation")}
                   </div>
                   <div style={{ color: "var(--text-muted)", fontSize: "0.8rem", marginTop: "4px" }}>
-                    Founder & Managing Director • Best Star Group FZE
+                    {t("chairman.roleSubtitle")}
                   </div>
                 </div>
               </div>
@@ -111,13 +111,13 @@ export default function AboutUsPage() {
             {/* Right Letter Body */}
             <div>
               <h2 className="section-title" style={{ fontSize: "2rem" }}>
-                Message from the <span className="text-gold-gradient">Chairman&apos;s Desk</span>
+                {t("chairman.title")}
               </h2>
 
               <div 
                 style={{
                   borderLeft: "4px solid var(--gold-600)",
-                  background: "#FFFFFF",
+                  background: "var(--bg-card)",
                   padding: "20px 24px",
                   borderRadius: "0 8px 8px 0",
                   border: "1px solid var(--border-gold-subtle)",
@@ -127,15 +127,20 @@ export default function AboutUsPage() {
                 }}
               >
                 <p className="font-editorial" style={{ fontStyle: "italic", fontSize: "1.15rem", color: "var(--text-primary)", margin: 0 }}>
-                  &ldquo;{CHAIRMAN_MESSAGE.quote}&rdquo;
+                  &ldquo;{t("chairman.quote")}&rdquo;
                 </p>
               </div>
 
               <div style={{ color: "var(--text-secondary)", fontSize: "0.98rem", lineHeight: 1.85, display: "flex", flexDirection: "column", gap: "16px" }}>
-                <p><strong>{CHAIRMAN_MESSAGE.leadParagraph}</strong></p>
-                {CHAIRMAN_MESSAGE.paragraphs.map((p, idx) => (
-                  <p key={idx}>{p}</p>
-                ))}
+                <p><strong>{t("chairman.leadParagraph")}</strong></p>
+                <p>{t("chairman.paragraph1")}</p>
+                <p>{t("chairman.paragraph2")}</p>
+                <p>{t("chairman.paragraph3")}</p>
+                <p>{t("chairman.paragraph4")}</p>
+                <p>{t("chairman.paragraph5")}</p>
+                <p>{t("chairman.paragraph6")}</p>
+                <p>{t("chairman.paragraph7")}</p>
+                <p>{t("chairman.paragraph8")}</p>
               </div>
             </div>
 
@@ -145,46 +150,46 @@ export default function AboutUsPage() {
       </section>
 
       {/* Section 2: Vision & Mission */}
-      <section id="vision" className="section-spacing" style={{ backgroundColor: "#FFFFFF", borderTop: "1px solid var(--border-gold-subtle)" }}>
+      <section id="vision" className="section-spacing" style={{ backgroundColor: "var(--bg-surface)", borderTop: "1px solid var(--border-gold-subtle)" }}>
         <div className="site-container">
           
           <div style={{ textAlign: "center", marginBottom: "40px" }}>
             <div className="section-label" style={{ justifyContent: "center" }}>
               <Target size={14} />
-              <span>GUIDING LIGHT</span>
+              <span>{t("aboutUs.guidingLightBadge")}</span>
             </div>
             <h2 className="section-title">
-              Our Vision & <span className="text-gold-gradient">Corporate Mission</span>
+              {t("aboutUs.visionMissionTitle")}
             </h2>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "28px" }}>
             
             {/* Vision Card */}
-            <div className="luxe-card" style={{ border: "2px solid var(--border-gold-medium)", background: "var(--gold-50)" }}>
-              <span className="gold-badge" style={{ marginBottom: "14px" }}>CORPORATE VISION</span>
+            <div className="luxe-card" style={{ border: "2px solid var(--border-gold-medium)", background: "var(--bg-card)" }}>
+              <span className="gold-badge" style={{ marginBottom: "14px" }}>{t("aboutUs.visionTitle")}</span>
               <h3 className="font-serif" style={{ fontSize: "1.45rem", color: "var(--text-primary)", marginBottom: "14px" }}>
-                Our Vision
+                {t("aboutUs.visionTitle")}
               </h3>
               <p style={{ color: "var(--text-secondary)", fontSize: "0.98rem", lineHeight: 1.8 }}>
-                We want to be an ethically strong, value-based company propelling successful innovations and constantly exploring new opportunities. We strive to be rated as a distinguished conglomerate that values relationships with partners, employees, and customers much above the business. We want to be the first call for visionary entrepreneurs with bright ideas and act as a catalyst for radical high-tech development across all frontiers.
+                {t("aboutUs.visionText")}
               </p>
               <div style={{ marginTop: "20px", paddingTop: "14px", borderTop: "1px solid var(--border-gold-subtle)", color: "var(--gold-800)", fontWeight: 700, fontSize: "0.92rem" }}>
-                Enterprise Target: AED 1 Billion+ Valuation & 2,000+ Global Workforce
+                {t("aboutUs.obj1")}
               </div>
             </div>
 
             {/* Mission Card */}
-            <div className="luxe-card" style={{ border: "2px solid var(--border-gold-medium)", background: "var(--gold-50)" }}>
-              <span className="gold-badge" style={{ marginBottom: "14px" }}>CORPORATE MISSION</span>
+            <div className="luxe-card" style={{ border: "2px solid var(--border-gold-medium)", background: "var(--bg-card)" }}>
+              <span className="gold-badge" style={{ marginBottom: "14px" }}>{t("aboutUs.missionTitle")}</span>
               <h3 className="font-serif" style={{ fontSize: "1.45rem", color: "var(--text-primary)", marginBottom: "14px" }}>
-                Our Mission
+                {t("aboutUs.missionTitle")}
               </h3>
               <p style={{ color: "var(--text-secondary)", fontSize: "0.98rem", lineHeight: 1.8 }}>
-                Our mission is to collaborate with entrepreneurs and build viable, resilient businesses across diverse industries and geographic territories. Our long-term sustainability will be a result of our prudent investments in creating innovative intellectual property (IP), delivering uncompromising safety, and fostering open innovation.
+                {t("aboutUs.missionText")}
               </p>
               <div style={{ marginTop: "20px", paddingTop: "14px", borderTop: "1px solid var(--border-gold-subtle)", color: "var(--gold-800)", fontWeight: 700, fontSize: "0.92rem" }}>
-                Open Innovation Strategy: Making capital work smarter
+                {t("aboutUs.obj2")}
               </div>
             </div>
 
@@ -194,45 +199,45 @@ export default function AboutUsPage() {
       </section>
 
       {/* Section 3: Safety, Health & Environment (HSE) Policy */}
-      <section id="hse" className="section-spacing" style={{ backgroundColor: "#FAF8F5", borderTop: "1px solid var(--border-gold-subtle)" }}>
+      <section id="hse" className="section-spacing" style={{ backgroundColor: "var(--bg-deep)", borderTop: "1px solid var(--border-gold-subtle)" }}>
         <div className="site-container">
           
           <div className="section-label">
             <ShieldCheck size={14} />
-            <span>SAFETY & SUSTAINABILITY</span>
+            <span>{t("aboutUs.hseBadge")}</span>
           </div>
           <h2 className="section-title">
-            Safety, Health & <span className="text-crimson-gradient">Environment (HSE)</span>
+            {t("aboutUs.hseTitle")}
           </h2>
           <p className="section-subtitle" style={{ marginBottom: "32px" }}>
-            The safety and well-being of our 2,000+ workforce, clients, and operational sites remains the non-negotiable bedrock of Best Star Group.
+            {t("aboutUs.hseDesc")}
           </p>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "22px" }}>
-            <div className="luxe-card" style={{ background: "#FFFFFF", border: "1.5px solid var(--border-gold-medium)" }}>
+            <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1.5px solid var(--border-gold-medium)" }}>
               <h4 className="font-serif" style={{ fontSize: "1.15rem", color: "var(--text-primary)", marginBottom: "8px" }}>
-                Zero-Accident Safety Culture
+                {t("values.item3Title")}
               </h4>
               <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>
-                Rigorous job-safety analyses, certified personal protective equipment (PPE), and continuous safety drills across all high-voltage substation, mechanical, and pharmaceutical transport facilities.
+                {t("values.item3Desc")}
               </p>
             </div>
 
-            <div className="luxe-card" style={{ background: "#FFFFFF", border: "1.5px solid var(--border-gold-medium)" }}>
+            <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1.5px solid var(--border-gold-medium)" }}>
               <h4 className="font-serif" style={{ fontSize: "1.15rem", color: "var(--text-primary)", marginBottom: "8px" }}>
-                Environmental Stewardship
+                {t("values.item2Title")}
               </h4>
               <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>
-                Transitioning our passenger fleet to Euro-5 low-emission standards and retrofitting high-efficiency chiller controls that reduce commercial building power consumption by up to 24%.
+                {t("values.item2Desc")}
               </p>
             </div>
 
-            <div className="luxe-card" style={{ background: "#FFFFFF", border: "1.5px solid var(--border-gold-medium)" }}>
+            <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1.5px solid var(--border-gold-medium)" }}>
               <h4 className="font-serif" style={{ fontSize: "1.15rem", color: "var(--text-primary)", marginBottom: "8px" }}>
-                ISO Quality Compliance
+                {t("values.item1Title")}
               </h4>
               <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>
-                Complete conformance with ISO 9001:2015 Quality Management and ISO 14001 Environmental frameworks, backed by ASNT Level III engineering inspectors.
+                {t("values.item1Desc")}
               </p>
             </div>
           </div>
@@ -241,7 +246,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Section 4: Executive Board Oversight & Governance Architecture */}
-      <section className="section-spacing" style={{ backgroundColor: "#FFFFFF", borderTop: "1px solid var(--border-gold-subtle)" }}>
+      <section className="section-spacing" style={{ backgroundColor: "var(--bg-surface)", borderTop: "1px solid var(--border-gold-subtle)" }}>
         <div className="site-container">
           
           <div style={{ textAlign: "center", marginBottom: "40px" }}>
@@ -259,9 +264,9 @@ export default function AboutUsPage() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
             
-            <div className="luxe-card" style={{ background: "#FAF9F6", border: "1.5px solid var(--border-gold-medium)", padding: "28px" }}>
+            <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1.5px solid var(--border-gold-medium)", padding: "28px" }}>
               <div style={{ color: "var(--gold-700)", fontSize: "0.74rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "8px" }}>
-                CHAIRMAN'S EXECUTIVE COMMITTEE
+                CHAIRMAN&apos;S EXECUTIVE COMMITTEE
               </div>
               <h4 className="font-serif" style={{ fontSize: "1.2rem", color: "var(--text-primary)", marginBottom: "8px" }}>
                 Ibunu Suwoothu Kamal
@@ -274,7 +279,7 @@ export default function AboutUsPage() {
               </p>
             </div>
 
-            <div className="luxe-card" style={{ background: "#FAF9F6", border: "1.5px solid var(--border-gold-medium)", padding: "28px" }}>
+            <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1.5px solid var(--border-gold-medium)", padding: "28px" }}>
               <div style={{ color: "var(--gold-700)", fontSize: "0.74rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "8px" }}>
                 ENGINEERING & POWER DIRECTORATE
               </div>
@@ -289,7 +294,7 @@ export default function AboutUsPage() {
               </p>
             </div>
 
-            <div className="luxe-card" style={{ background: "#FAF9F6", border: "1.5px solid var(--border-gold-medium)", padding: "28px" }}>
+            <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1.5px solid var(--border-gold-medium)", padding: "28px" }}>
               <div style={{ color: "var(--gold-700)", fontSize: "0.74rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "8px" }}>
                 HEALTHCARE & LIFE SCIENCES BOARD
               </div>

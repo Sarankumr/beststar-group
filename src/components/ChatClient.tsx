@@ -107,16 +107,16 @@ export default function ChatClient() {
 
     if (q.includes("achievement") || q.includes("milestone") || q.includes("award") || q.includes("revenue") || q.includes("growth")) {
       return `Best Star Group recently recorded landmark milestones across MENA and international markets:\n\n` +
-        ACHIEVEMENTS.map(a => `• **${a.title}** (${a.metric} ${a.metricLabel}) — ${a.location}`).join("\n") +
-        `\n\nOur holding operations maintain a AAA credit benchmark and zero-default project delivery track record across 18+ sovereign infrastructure frameworks.`;
+        ACHIEVEMENTS.map(a => `• **${a.title}** (${a.awardingBody} | ${a.year}) — ${a.location}`).join("\n") +
+        `\n\nOur holding operations maintain an exemplary operational track record across 10 active corporate entities.`;
     }
 
     if (q.includes("idea") || q.includes("pitch") || q.includes("startup") || q.includes("investment") || q.includes("venture")) {
-      return `Best Star Group maintains a dedicated **$50M+ Corporate Venture & Idea Incubator**. We review strategic proposals in AI BMS Diagnostics, Green Hydrogen Maritime Logistics, Autonomous Port Cranes, and Advanced Nanomedicine.\n\nYou can review active initiatives or submit your own confidential proposal on our [Business Ideas](/business-ideas) page.`;
+      return `Best Star Group maintains an active venture incubation ecosystem. We review strategic proposals in Clean Mobility, Cold-Chain MedTech, AI Infrastructure, and Industrial Logistics.\n\nYou can review active initiatives or submit your own confidential proposal on our [Business Ideas](/business-ideas) page.`;
     }
 
-    if (q.includes("chairman") || q.includes("ceo") || q.includes("founder") || q.includes("alexander") || q.includes("leadership")) {
-      return `Best Star Group FZE is led by **Dr. Alexander Wright**, Chairman & Group CEO, alongside a board of sovereign infrastructure veterans and international enterprise technologists.\n\nHeadquartered in Dubai, UAE with regional directorships in Riyadh, Singapore, Zurich, and London.`;
+    if (q.includes("chairman") || q.includes("ceo") || q.includes("founder") || q.includes("suwoothu") || q.includes("kamal") || q.includes("leadership")) {
+      return `Best Star Group Holding FZE was founded and is chaired by **Mr. Ibunu Suwoothu Kamal**, Chairman & Founder.\n\nUnder his strategic stewardship, Best Star Group has expanded to 10 diversified operating entities across the UAE, Saudi Arabia, India, and Malaysia.`;
     }
 
     if (q.includes("phone") || q.includes("call") || q.includes("contact") || q.includes("email") || q.includes("office") || q.includes("address")) {
@@ -470,7 +470,7 @@ export default function ChatClient() {
             <div 
               style={{ 
                 padding: "8px 16px", 
-                backgroundColor: "#FAF9F6", 
+                backgroundColor: "var(--bg-card)", 
                 borderBottom: "1px solid var(--border-gold-light)",
                 display: "flex",
                 alignItems: "center",

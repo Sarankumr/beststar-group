@@ -56,7 +56,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
   const otherAchievements = ACHIEVEMENTS.filter((a) => a.id !== achievement.id).slice(0, 3);
 
   return (
-    <div style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "var(--bg-deep)", minHeight: "100vh" }}>
       <Header />
 
       {/* Hero Header */}
@@ -65,7 +65,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
           position: "relative",
           paddingTop: "60px",
           paddingBottom: "50px",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-surface)",
           borderBottom: "1px solid var(--border-gold-subtle)",
         }}
       >
@@ -140,7 +140,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
                 {achievement.title}
               </h1>
 
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", padding: "10px 14px", backgroundColor: "#FAF9F6", borderRadius: "6px", border: "1px solid var(--border-gold-subtle)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", padding: "10px 14px", backgroundColor: "var(--bg-surface)", borderRadius: "6px", border: "1px solid var(--border-gold-subtle)" }}>
                 <Award size={18} color="var(--gold-600)" />
                 <div style={{ fontSize: "0.84rem", color: "var(--text-primary)" }}>
                   <strong>Conferred By:</strong> {achievement.awardingBody}
@@ -202,7 +202,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
       </section>
 
       {/* Main Content Body */}
-      <section className="section-spacing" style={{ backgroundColor: "#FAF8F5" }}>
+      <section className="section-spacing" style={{ backgroundColor: "var(--bg-deep)" }}>
         <div className="site-container">
           
           <div style={{ display: "grid", gridTemplateColumns: "1.8fr 1.2fr", gap: "40px", alignItems: "flex-start" }}>
@@ -213,7 +213,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
               {/* Full Detailed Dossier */}
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   borderRadius: "10px",
                   border: "1px solid var(--border-gold-medium)",
                   padding: "36px",
@@ -246,7 +246,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
               {/* Key Quantitative Metrics Grid */}
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   borderRadius: "10px",
                   border: "1px solid var(--border-gold-medium)",
                   padding: "32px",
@@ -268,7 +268,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
                       key={idx}
                       style={{
                         padding: "20px",
-                        backgroundColor: "#FAF9F6",
+                        backgroundColor: "var(--bg-surface)",
                         borderRadius: "8px",
                         border: "1px solid var(--border-gold-subtle)",
                         textAlign: "center"
@@ -312,7 +312,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
               {/* Related Achievements */}
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   borderRadius: "10px",
                   border: "1px solid var(--border-gold-medium)",
                   padding: "32px",
@@ -333,7 +333,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
                         justifyContent: "space-between",
                         alignItems: "center",
                         padding: "12px 16px",
-                        backgroundColor: "#FAF9F6",
+                        backgroundColor: "var(--bg-surface)",
                         borderRadius: "6px",
                         border: "1px solid var(--border-gold-subtle)",
                         textDecoration: "none",
@@ -344,7 +344,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
                         e.currentTarget.style.borderColor = "var(--gold-500)";
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = "#FAF9F6";
+                        e.currentTarget.style.backgroundColor = "var(--bg-surface)";
                         e.currentTarget.style.borderColor = "var(--border-gold-subtle)";
                       }}
                     >
@@ -368,7 +368,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
             <div style={{ position: "sticky", top: "100px" }}>
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   borderRadius: "12px",
                   border: "1.5px solid var(--border-gold-medium)",
                   padding: "32px",
@@ -451,7 +451,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
                           padding: "9px 12px",
                           borderRadius: "6px",
                           border: "1px solid var(--border-gold-medium)",
-                          backgroundColor: "#FAF9F6",
+                          backgroundColor: "var(--bg-surface)",
                           fontSize: "0.84rem",
                           color: "var(--text-primary)",
                           outline: "none",
@@ -474,7 +474,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
                           padding: "9px 12px",
                           borderRadius: "6px",
                           border: "1px solid var(--border-gold-medium)",
-                          backgroundColor: "#FAF9F6",
+                          backgroundColor: "var(--bg-surface)",
                           fontSize: "0.84rem",
                           color: "var(--text-primary)",
                           outline: "none",
@@ -496,7 +496,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
                           padding: "9px 12px",
                           borderRadius: "6px",
                           border: "1px solid var(--border-gold-medium)",
-                          backgroundColor: "#FAF9F6",
+                          backgroundColor: "var(--bg-surface)",
                           fontSize: "0.84rem",
                           color: "var(--text-primary)",
                           outline: "none",
@@ -519,7 +519,7 @@ export default function AchievementDetailClient({ achievement }: AchievementDeta
                           padding: "10px 12px",
                           borderRadius: "6px",
                           border: "1px solid var(--border-gold-medium)",
-                          backgroundColor: "#FAF9F6",
+                          backgroundColor: "var(--bg-surface)",
                           fontSize: "0.82rem",
                           color: "var(--text-primary)",
                           outline: "none",

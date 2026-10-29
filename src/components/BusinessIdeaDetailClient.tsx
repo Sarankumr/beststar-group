@@ -62,7 +62,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
   };
 
   return (
-    <div style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "var(--bg-deep)", minHeight: "100vh" }}>
       <Header />
 
       {/* Hero Header */}
@@ -71,7 +71,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
           position: "relative",
           paddingTop: "60px",
           paddingBottom: "50px",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-surface)",
           borderBottom: "1px solid var(--border-gold-subtle)",
         }}
       >
@@ -157,7 +157,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
                   gridTemplateColumns: "repeat(3, 1fr)", 
                   gap: "12px",
                   padding: "16px",
-                  backgroundColor: "#FAF9F6",
+                  backgroundColor: "var(--bg-surface)",
                   borderRadius: "8px",
                   border: "1px solid var(--border-gold-subtle)",
                 }}
@@ -221,7 +221,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
       </section>
 
       {/* Main Blueprint Details Body */}
-      <section className="section-spacing" style={{ backgroundColor: "#FAF8F5" }}>
+      <section className="section-spacing" style={{ backgroundColor: "var(--bg-deep)" }}>
         <div className="site-container">
           
           <div style={{ display: "grid", gridTemplateColumns: "1.8fr 1.2fr", gap: "40px", alignItems: "flex-start" }}>
@@ -232,7 +232,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
               {/* Detailed Project Description Section */}
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   borderRadius: "10px",
                   border: "1.5px solid var(--border-gold-medium)",
                   padding: "32px",
@@ -282,7 +282,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
               {/* Executive Summary */}
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   borderRadius: "10px",
                   border: "1px solid var(--border-gold-medium)",
                   padding: "32px",
@@ -326,7 +326,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
               {/* Conglomerate Synergy with Best Star Group */}
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   borderRadius: "10px",
                   border: "1px solid var(--border-gold-medium)",
                   padding: "32px",
@@ -352,7 +352,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
               {/* Technology & Protocol Architecture */}
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   borderRadius: "10px",
                   border: "1px solid var(--border-gold-medium)",
                   padding: "32px",
@@ -374,7 +374,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
                       style={{
                         padding: "7px 16px",
                         borderRadius: "20px",
-                        backgroundColor: "#FAF9F6",
+                        backgroundColor: "var(--bg-surface)",
                         border: "1px solid var(--border-gold-medium)",
                         color: "var(--text-primary)",
                         fontSize: "0.82rem",
@@ -394,7 +394,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
               {/* 4-Phase Roadmap Milestones */}
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   borderRadius: "10px",
                   border: "1px solid var(--border-gold-medium)",
                   padding: "32px",
@@ -417,7 +417,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
                       style={{
                         padding: "16px 20px",
                         borderRadius: "8px",
-                        backgroundColor: "#FAF9F6",
+                        backgroundColor: "var(--bg-surface)",
                         border: "1px solid var(--border-gold-subtle)",
                         display: "flex",
                         justifyContent: "space-between",
@@ -461,7 +461,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
               {/* Desired Co-Founder / Strategic Partner Profiles */}
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   borderRadius: "10px",
                   border: "1px solid var(--border-gold-medium)",
                   padding: "32px",
@@ -489,7 +489,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
                         fontSize: "0.86rem",
                         color: "var(--text-primary)",
                         padding: "10px 14px",
-                        backgroundColor: "#FAF9F6",
+                        backgroundColor: "var(--bg-surface)",
                         borderRadius: "6px",
                         border: "1px solid var(--border-gold-subtle)"
                       }}
@@ -507,7 +507,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
             <div style={{ position: "sticky", top: "100px" }}>
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   borderRadius: "12px",
                   border: "1.5px solid var(--border-gold-medium)",
                   padding: "32px",
@@ -590,7 +590,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
                           padding: "9px 12px",
                           borderRadius: "6px",
                           border: "1px solid var(--border-gold-medium)",
-                          backgroundColor: "#FAF9F6",
+                          backgroundColor: "var(--bg-surface)",
                           fontSize: "0.84rem",
                           color: "var(--text-primary)",
                           outline: "none",
@@ -613,7 +613,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
                           padding: "9px 12px",
                           borderRadius: "6px",
                           border: "1px solid var(--border-gold-medium)",
-                          backgroundColor: "#FAF9F6",
+                          backgroundColor: "var(--bg-surface)",
                           fontSize: "0.84rem",
                           color: "var(--text-primary)",
                           outline: "none",
@@ -636,7 +636,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
                           padding: "9px 12px",
                           borderRadius: "6px",
                           border: "1px solid var(--border-gold-medium)",
-                          backgroundColor: "#FAF9F6",
+                          backgroundColor: "var(--bg-surface)",
                           fontSize: "0.84rem",
                           color: "var(--text-primary)",
                           outline: "none",
@@ -658,7 +658,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
                           padding: "9px 12px",
                           borderRadius: "6px",
                           border: "1px solid var(--border-gold-medium)",
-                          backgroundColor: "#FAF9F6",
+                          backgroundColor: "var(--bg-surface)",
                           fontSize: "0.84rem",
                           color: "var(--text-primary)",
                           outline: "none",
@@ -697,7 +697,7 @@ export default function BusinessIdeaDetailClient({ idea }: BusinessIdeaDetailCli
                           padding: "10px 12px",
                           borderRadius: "6px",
                           border: "1px solid var(--border-gold-medium)",
-                          backgroundColor: "#FAF9F6",
+                          backgroundColor: "var(--bg-surface)",
                           fontSize: "0.82rem",
                           color: "var(--text-primary)",
                           outline: "none",

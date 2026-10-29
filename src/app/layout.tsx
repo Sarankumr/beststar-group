@@ -57,6 +57,7 @@ export const metadata: Metadata = {
 };
 
 import FloatingChatWidget from "@/components/FloatingChatWidget";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export default function RootLayout({
   children,
@@ -72,12 +73,19 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
           rel="stylesheet"
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("beststar_theme")||"light";document.documentElement.setAttribute("data-theme",t);document.documentElement.style.colorScheme=t;var l=localStorage.getItem("beststar_language")||"en";document.documentElement.dir=l==="ar"?"rtl":"ltr";document.documentElement.lang=l;}catch(e){}})();`,
+          }}
+        />
       </head>
       <body suppressHydrationWarning>
-        <LanguageProvider>
-          {children}
-          <FloatingChatWidget />
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            {children}
+            <FloatingChatWidget />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

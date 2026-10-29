@@ -22,7 +22,7 @@ export default function GlobalPresenceSection({ initialCountry = "UAE" }: Global
       className="section-spacing"
       style={{
         position: "relative",
-        backgroundColor: "#FAF8F5",
+        backgroundColor: "var(--bg-deep)",
         borderTop: "1px solid var(--border-gold-subtle)",
         borderBottom: "1px solid var(--border-gold-subtle)",
       }}
@@ -59,7 +59,7 @@ export default function GlobalPresenceSection({ initialCountry = "UAE" }: Global
                 key={off.code}
                 onClick={() => setSelectedCountry(off.code)}
                 style={{
-                  background: isSelected ? "#FFFFFF" : "#F4F1EA",
+                  background: isSelected ? "var(--bg-card)" : "var(--bg-surface)",
                   border: isSelected ? "2px solid var(--gold-600)" : "1px solid var(--border-gold-subtle)",
                   borderRadius: "8px",
                   padding: "18px 20px",
@@ -89,7 +89,7 @@ export default function GlobalPresenceSection({ initialCountry = "UAE" }: Global
         {/* Active Directorate Details Display */}
         <div 
           style={{
-            background: "#FFFFFF",
+            background: "var(--bg-card)",
             border: "1.5px solid var(--border-gold-medium)",
             borderRadius: "12px",
             padding: "36px",
@@ -212,7 +212,7 @@ export default function GlobalPresenceSection({ initialCountry = "UAE" }: Global
                 ))}
               </div>
 
-              <div style={{ marginTop: "20px", padding: "14px", background: "#FAF8F5", borderRadius: "6px", border: "1px dashed var(--border-gold-medium)", fontSize: "0.82rem", color: "var(--text-muted)", display: "flex", gap: "10px", alignItems: "flex-start" }}>
+              <div style={{ marginTop: "20px", padding: "14px", background: "var(--bg-surface)", borderRadius: "6px", border: "1px dashed var(--border-gold-medium)", fontSize: "0.82rem", color: "var(--text-muted)", display: "flex", gap: "10px", alignItems: "flex-start" }}>
                 <ShieldCheck size={18} color="var(--gold-600)" style={{ flexShrink: 0, marginTop: "2px" }} />
                 <span>
                   {t("global.statusNote")}

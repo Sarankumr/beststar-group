@@ -20,10 +20,13 @@ import {
   Heart,
   FileText,
   Activity,
-  Award
+  Award,
+  Sun,
+  Moon
 } from "lucide-react";
 import { GLOBAL_OFFICES, SUBSIDIARIES } from "@/data/companyData";
 import { useLanguage } from "@/context/LanguageContext";
+import { useTheme } from "@/context/ThemeContext";
 
 interface HeaderProps {
   onOpenInquiry?: () => void;
@@ -32,6 +35,7 @@ interface HeaderProps {
 export default function Header({ onOpenInquiry }: HeaderProps) {
   const pathname = usePathname();
   const { language, setLanguage, t, isRtl } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -131,8 +135,8 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
             </span>
           </div>
 
-          {/* Right: Regional Hubs, Direct Line, Language Pill */}
-          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          {/* Right: Regional Hubs, Direct Line, Language Pill, Theme Switcher */}
+          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
 
             {/* Regional Flags */}
             <div style={{ alignItems: "center", gap: "6px" }} className="desktop-only-inline">
@@ -167,7 +171,7 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
               ))}
             </div>
 
-            <span style={{ color: "rgba(212, 163, 40, 0.3)" }}>|</span>
+            <span style={{ color: "rgba(212, 163, 40, 0.3)" }} className="desktop-only-inline">|</span>
 
             {/* Direct Phone */}
             <a
@@ -236,6 +240,31 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
               </button>
             </div>
 
+            {/* Theme Toggle Button */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label="Toggle Theme"
+              title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "5px",
+                background: "rgba(212, 163, 40, 0.15)",
+                color: "var(--gold-300)",
+                border: "1px solid rgba(212, 163, 40, 0.45)",
+                borderRadius: "20px",
+                padding: "2px 8px",
+                fontSize: "0.7rem",
+                fontWeight: 700,
+                cursor: "pointer",
+                transition: "all 0.2s"
+              }}
+            >
+              {theme === "light" ? <Moon size={11} color="var(--gold-300)" /> : <Sun size={11} color="var(--gold-300)" />}
+              <span>{theme === "light" ? (language === "ar" ? "داكن" : "Dark") : (language === "ar" ? "فاتح" : "Light")}</span>
+            </button>
+
           </div>
         </div>
       </div>
@@ -248,15 +277,17 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
           left: 0,
           width: "100%",
           zIndex: 100,
-          backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.98)" : "#FFFFFF",
+          backgroundColor: isScrolled
+            ? "var(--bg-glass)"
+            : (theme === "dark" ? "rgba(10, 15, 26, 0.96)" : "var(--bg-surface)"),
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
           borderBottom: isScrolled
-            ? "1.5px solid rgba(184, 134, 11, 0.3)"
-            : "1px solid rgba(184, 134, 11, 0.16)",
+            ? "1.5px solid rgba(212, 163, 40, 0.35)"
+            : (theme === "dark" ? "1px solid rgba(212, 163, 40, 0.22)" : "1px solid rgba(184, 134, 11, 0.16)"),
           boxShadow: isScrolled
-            ? "0 10px 30px rgba(0, 0, 0, 0.08)"
-            : "0 2px 10px rgba(0, 0, 0, 0.03)",
+            ? (theme === "dark" ? "0 10px 30px rgba(0, 0, 0, 0.55)" : "0 10px 30px rgba(0, 0, 0, 0.08)")
+            : (theme === "dark" ? "0 4px 20px rgba(0, 0, 0, 0.35)" : "0 2px 10px rgba(0, 0, 0, 0.03)"),
           transition: "all 0.3s ease",
           padding: isScrolled ? "8px 0" : "12px 0",
         }}
@@ -288,7 +319,9 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                 borderRadius: "50%",
                 overflow: "hidden",
                 border: "2px solid #D4A328",
-                boxShadow: "0 4px 14px rgba(184, 134, 11, 0.35)",
+                boxShadow: theme === "dark"
+                  ? "0 0 20px rgba(212, 163, 40, 0.45), 0 4px 14px rgba(0, 0, 0, 0.5)"
+                  : "0 4px 14px rgba(184, 134, 11, 0.35)",
                 backgroundColor: "#080C14",
                 flexShrink: 0,
                 transition: "all 0.3s ease",
@@ -312,9 +345,8 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                   fontWeight: 900,
                   letterSpacing: "0.06em",
                   lineHeight: 1.1,
-                  background: "linear-gradient(135deg, #0F141C 0%, #2A3342 50%, #B8860B 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
+                  color: theme === "dark" ? "#FFFFFF" : "#0F172A",
+                  transition: "color 0.3s ease",
                 }}
               >
                 BEST STAR
@@ -323,7 +355,7 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                 style={{
                   fontSize: "0.68rem",
                   letterSpacing: "0.22em",
-                  color: "var(--gold-700)",
+                  color: "var(--gold-400)",
                   textTransform: "uppercase",
                   fontWeight: 800,
                   marginTop: "2px",
@@ -333,8 +365,14 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                 }}
               >
                 <span>GROUP</span>
-                <span style={{ width: "12px", height: "1.5px", backgroundColor: "var(--gold-600)" }} />
-                <span style={{ color: "#6B7280", fontSize: "0.64rem", fontWeight: 700 }}>HOLDING FZE</span>
+                <span style={{ width: "12px", height: "1.5px", backgroundColor: "var(--gold-400)" }} />
+                <span style={{ 
+                  color: theme === "dark" ? "rgba(255, 255, 255, 0.75)" : "#6B7280", 
+                  fontSize: "0.64rem", 
+                  fontWeight: 700 
+                }}>
+                  HOLDING FZE
+                </span>
               </div>
             </div>
           </Link>
@@ -351,18 +389,21 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
             <Link
               href="/"
               style={{
-                color: pathname === "/" ? "var(--gold-700)" : "var(--text-primary)",
+                color: pathname === "/" 
+                  ? "var(--gold-400)" 
+                  : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"),
                 textDecoration: "none",
                 fontSize: "0.74rem",
                 fontFamily: "var(--font-serif)",
                 letterSpacing: "0.05em",
                 fontWeight: pathname === "/" ? 800 : 600,
                 padding: "8px 0",
-                borderBottom: pathname === "/" ? "2px solid var(--gold-600)" : "2px solid transparent",
-                transition: "color 0.2s"
+                borderBottom: pathname === "/" ? "2px solid var(--gold-500)" : "2px solid transparent",
+                transition: "color 0.2s, border-color 0.2s",
+                textShadow: (pathname === "/" && theme === "dark") ? "0 0 10px rgba(212, 163, 40, 0.45)" : "none",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold-600)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = pathname === "/" ? "var(--gold-700)" : "var(--text-primary)")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold-400)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = pathname === "/" ? "var(--gold-400)" : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"))}
             >
               {t("common.home").toUpperCase()}
             </Link>
@@ -376,7 +417,9 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
               <Link
                 href="/about-us"
                 style={{
-                  color: pathname.startsWith("/about-us") ? "var(--gold-700)" : "var(--text-primary)",
+                  color: pathname.startsWith("/about-us") 
+                    ? "var(--gold-400)" 
+                    : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"),
                   textDecoration: "none",
                   fontSize: "0.74rem",
                   fontFamily: "var(--font-serif)",
@@ -386,12 +429,15 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                   alignItems: "center",
                   gap: "4px",
                   padding: "8px 0",
-                  borderBottom: pathname.startsWith("/about-us") ? "2px solid var(--gold-600)" : "2px solid transparent",
-                  transition: "color 0.2s"
+                  borderBottom: pathname.startsWith("/about-us") ? "2px solid var(--gold-500)" : "2px solid transparent",
+                  transition: "color 0.2s, border-color 0.2s",
+                  textShadow: (pathname.startsWith("/about-us") && theme === "dark") ? "0 0 10px rgba(212, 163, 40, 0.45)" : "none",
                 }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold-400)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = pathname.startsWith("/about-us") ? "var(--gold-400)" : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"))}
               >
                 <span>{t("common.aboutUs").toUpperCase()}</span>
-                <ChevronDown size={12} color="var(--gold-600)" />
+                <ChevronDown size={12} color="var(--gold-500)" />
               </Link>
 
               {openDropdown === "about" && (
@@ -402,10 +448,10 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                     left: isRtl ? "auto" : "0",
                     right: isRtl ? "0" : "auto",
                     width: "260px",
-                    backgroundColor: "#FFFFFF",
+                    backgroundColor: "var(--bg-card)",
                     border: "1.5px solid var(--border-gold-medium)",
                     borderRadius: "8px",
-                    boxShadow: "0 14px 35px rgba(0, 0, 0, 0.12)",
+                    boxShadow: theme === "dark" ? "0 18px 45px rgba(0, 0, 0, 0.6)" : "0 14px 35px rgba(0, 0, 0, 0.12)",
                     padding: "10px",
                     zIndex: 110,
                     animation: "dropdownFade 0.2s ease",
@@ -416,7 +462,7 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                     className="dropdown-item-luxe"
                     style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 12px", textDecoration: "none", borderRadius: "6px" }}
                   >
-                    <Award size={16} color="var(--gold-600)" />
+                    <Award size={16} color="var(--gold-500)" />
                     <div>
                       <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--text-primary)" }}>{t("nav.chairmansDesk")}</div>
                       <div style={{ fontSize: "0.7rem", color: "var(--text-muted)" }}>Ibunu Suwoothu Kamal</div>
@@ -428,10 +474,10 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                     className="dropdown-item-luxe"
                     style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 12px", textDecoration: "none", borderRadius: "6px" }}
                   >
-                    <Sparkles size={16} color="var(--gold-600)" />
+                    <Sparkles size={16} color="var(--gold-500)" />
                     <div>
                       <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--text-primary)" }}>{t("nav.visionMission")}</div>
-                      <div style={{ fontSize: "0.7rem", color: "var(--text-muted)" }}>Global Expansion & Quality</div>
+                      <div style={{ fontSize: "0.7rem", color: "var(--text-muted)" }}>{t("navExtra.globalExpansion")}</div>
                     </div>
                   </Link>
 
@@ -440,10 +486,10 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                     className="dropdown-item-luxe"
                     style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 12px", textDecoration: "none", borderRadius: "6px" }}
                   >
-                    <ShieldCheck size={16} color="var(--gold-600)" />
+                    <ShieldCheck size={16} color="var(--gold-500)" />
                     <div>
                       <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--text-primary)" }}>{t("nav.values")}</div>
-                      <div style={{ fontSize: "0.7rem", color: "var(--text-muted)" }}>ISO 9001:2015 Benchmarks</div>
+                      <div style={{ fontSize: "0.7rem", color: "var(--text-muted)" }}>{t("navExtra.isoStandards")}</div>
                     </div>
                   </Link>
 
@@ -452,10 +498,10 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                     className="dropdown-item-luxe"
                     style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 12px", textDecoration: "none", borderRadius: "6px" }}
                   >
-                    <Activity size={16} color="var(--gold-600)" />
+                    <Activity size={16} color="var(--gold-500)" />
                     <div>
                       <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--text-primary)" }}>{t("nav.hse")}</div>
-                      <div style={{ fontSize: "0.7rem", color: "var(--text-muted)" }}>Zero Harm Standard</div>
+                      <div style={{ fontSize: "0.7rem", color: "var(--text-muted)" }}>{t("navExtra.zeroHarm")}</div>
                     </div>
                   </Link>
 
@@ -464,10 +510,10 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                     className="dropdown-item-luxe"
                     style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 12px", textDecoration: "none", borderRadius: "6px" }}
                   >
-                    <Award size={16} color="var(--gold-600)" />
+                    <Award size={16} color="var(--gold-500)" />
                     <div>
-                      <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--text-primary)" }}>Achievements & Citations</div>
-                      <div style={{ fontSize: "0.7rem", color: "var(--text-muted)" }}>Sovereign Records & Awards</div>
+                      <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--text-primary)" }}>{t("navExtra.achievementsTitle")}</div>
+                      <div style={{ fontSize: "0.7rem", color: "var(--text-muted)" }}>{t("navExtra.sovereignRecords")}</div>
                     </div>
                   </Link>
                 </div>
@@ -483,7 +529,9 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
               <Link
                 href="/subsidiaries"
                 style={{
-                  color: pathname.startsWith("/subsidiaries") ? "var(--gold-700)" : "var(--text-primary)",
+                  color: pathname.startsWith("/subsidiaries") 
+                    ? "var(--gold-400)" 
+                    : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"),
                   textDecoration: "none",
                   fontSize: "0.74rem",
                   fontFamily: "var(--font-serif)",
@@ -493,12 +541,15 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                   alignItems: "center",
                   gap: "4px",
                   padding: "8px 0",
-                  borderBottom: pathname.startsWith("/subsidiaries") ? "2px solid var(--gold-600)" : "2px solid transparent",
-                  transition: "color 0.2s"
+                  borderBottom: pathname.startsWith("/subsidiaries") ? "2px solid var(--gold-500)" : "2px solid transparent",
+                  transition: "color 0.2s, border-color 0.2s",
+                  textShadow: (pathname.startsWith("/subsidiaries") && theme === "dark") ? "0 0 10px rgba(212, 163, 40, 0.45)" : "none",
                 }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold-400)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = pathname.startsWith("/subsidiaries") ? "var(--gold-400)" : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"))}
               >
                 <span>{t("common.sectors").toUpperCase()}</span>
-                <ChevronDown size={12} color="var(--gold-600)" />
+                <ChevronDown size={12} color="var(--gold-500)" />
               </Link>
 
               {openDropdown === "enterprises" && (
@@ -509,57 +560,62 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                     left: isRtl ? "auto" : "-120px",
                     right: isRtl ? "-120px" : "auto",
                     width: "480px",
-                    backgroundColor: "#FFFFFF",
+                    backgroundColor: "var(--bg-card)",
                     border: "1.5px solid var(--border-gold-medium)",
                     borderRadius: "10px",
-                    boxShadow: "0 18px 45px rgba(0, 0, 0, 0.14)",
+                    boxShadow: theme === "dark" ? "0 20px 50px rgba(0, 0, 0, 0.65)" : "0 18px 45px rgba(0, 0, 0, 0.14)",
                     padding: "16px",
                     zIndex: 110,
                     animation: "dropdownFade 0.2s ease",
                   }}
                 >
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: "10px", marginBottom: "12px", borderBottom: "1px solid var(--border-gold-subtle)" }}>
-                    <span style={{ fontSize: "0.75rem", fontWeight: 800, color: "var(--gold-800)", letterSpacing: "0.08em" }}>
-                      OPERATING BUSINESS VERTICALS
+                    <span style={{ fontSize: "0.75rem", fontWeight: 800, color: "var(--gold-400)", letterSpacing: "0.08em" }}>
+                      {t("navExtra.operatingVerticals")}
                     </span>
-                    <Link href="/subsidiaries" style={{ fontSize: "0.74rem", color: "var(--gold-600)", fontWeight: 700, textDecoration: "none" }}>
-                      View All 10 →
+                    <Link href="/subsidiaries" style={{ fontSize: "0.74rem", color: "var(--gold-500)", fontWeight: 700, textDecoration: "none" }}>
+                      {t("navExtra.viewAll10")}
                     </Link>
                   </div>
 
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
-                    {SUBSIDIARIES.slice(0, 6).map((sub) => (
-                      <Link
-                        key={sub.id}
-                        href={`/subsidiaries/${sub.id}`}
-                        style={{
-                          textDecoration: "none",
-                          padding: "8px 10px",
-                          borderRadius: "6px",
-                          border: "1px solid var(--border-gold-subtle)",
-                          backgroundColor: "#FAF9F6",
-                          display: "flex",
-                          flexDirection: "column",
-                          gap: "2px",
-                          transition: "all 0.2s ease",
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = "var(--gold-50)";
-                          e.currentTarget.style.borderColor = "var(--gold-500)";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "#FAF9F6";
-                          e.currentTarget.style.borderColor = "var(--border-gold-subtle)";
-                        }}
-                      >
-                        <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "var(--text-primary)" }}>
-                          {sub.shortName}
-                        </span>
-                        <span style={{ fontSize: "0.68rem", color: "var(--gold-700)", fontWeight: 600 }}>
-                          {sub.sector}
-                        </span>
-                      </Link>
-                    ))}
+                    {SUBSIDIARIES.slice(0, 6).map((sub) => {
+                      const subKey = sub.id === "pharma-healthcare" ? "pharma" : sub.id === "facility-management" ? "facility" : sub.id === "cargo-logistics" ? "cargo" : sub.id === "tourism-hospitality" ? "tourism" : sub.id === "igts-technical" ? "igts" : sub.id === "mak-auto" ? "mak" : "";
+                      const subShort = subKey ? (t(`subsidiaryItems.${subKey}.shortName`) || sub.shortName) : sub.shortName;
+                      const subSec = subKey ? (t(`subsidiaryItems.${subKey}.sector`) || sub.sector) : sub.sector;
+                      return (
+                        <Link
+                          key={sub.id}
+                          href={`/subsidiaries/${sub.id}`}
+                          style={{
+                            textDecoration: "none",
+                            padding: "8px 10px",
+                            borderRadius: "6px",
+                            border: "1px solid var(--border-gold-subtle)",
+                            backgroundColor: "var(--bg-surface)",
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "2px",
+                            transition: "all 0.2s ease",
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = "var(--gold-50)";
+                            e.currentTarget.style.borderColor = "var(--gold-500)";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = "var(--bg-surface)";
+                            e.currentTarget.style.borderColor = "var(--border-gold-subtle)";
+                          }}
+                        >
+                          <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "var(--text-primary)" }}>
+                            {subShort}
+                          </span>
+                          <span style={{ fontSize: "0.68rem", color: "var(--gold-500)", fontWeight: 600 }}>
+                            {subSec}
+                          </span>
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -569,16 +625,21 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
             <Link
               href="/global-presence"
               style={{
-                color: pathname.startsWith("/global-presence") ? "var(--gold-700)" : "var(--text-primary)",
+                color: pathname.startsWith("/global-presence") 
+                  ? "var(--gold-400)" 
+                  : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"),
                 textDecoration: "none",
                 fontSize: "0.74rem",
                 fontFamily: "var(--font-serif)",
                 letterSpacing: "0.05em",
                 fontWeight: pathname.startsWith("/global-presence") ? 800 : 600,
                 padding: "8px 0",
-                borderBottom: pathname.startsWith("/global-presence") ? "2px solid var(--gold-600)" : "2px solid transparent",
-                transition: "color 0.2s"
+                borderBottom: pathname.startsWith("/global-presence") ? "2px solid var(--gold-500)" : "2px solid transparent",
+                transition: "color 0.2s, border-color 0.2s",
+                textShadow: (pathname.startsWith("/global-presence") && theme === "dark") ? "0 0 10px rgba(212, 163, 40, 0.45)" : "none",
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold-400)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = pathname.startsWith("/global-presence") ? "var(--gold-400)" : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"))}
             >
               {t("common.globalHubs").toUpperCase()}
             </Link>
@@ -587,16 +648,21 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
             <Link
               href="/investor-centre"
               style={{
-                color: pathname.startsWith("/investor-centre") ? "var(--gold-700)" : "var(--text-primary)",
+                color: pathname.startsWith("/investor-centre") 
+                  ? "var(--gold-400)" 
+                  : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"),
                 textDecoration: "none",
                 fontSize: "0.74rem",
                 fontFamily: "var(--font-serif)",
                 letterSpacing: "0.05em",
                 fontWeight: pathname.startsWith("/investor-centre") ? 800 : 600,
                 padding: "8px 0",
-                borderBottom: pathname.startsWith("/investor-centre") ? "2px solid var(--gold-600)" : "2px solid transparent",
-                transition: "color 0.2s"
+                borderBottom: pathname.startsWith("/investor-centre") ? "2px solid var(--gold-500)" : "2px solid transparent",
+                transition: "color 0.2s, border-color 0.2s",
+                textShadow: (pathname.startsWith("/investor-centre") && theme === "dark") ? "0 0 10px rgba(212, 163, 40, 0.45)" : "none",
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold-400)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = pathname.startsWith("/investor-centre") ? "var(--gold-400)" : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"))}
             >
               {t("common.investor").toUpperCase()}
             </Link>
@@ -605,16 +671,21 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
             <Link
               href="/careers"
               style={{
-                color: pathname.startsWith("/careers") ? "var(--gold-700)" : "var(--text-primary)",
+                color: pathname.startsWith("/careers") 
+                  ? "var(--gold-400)" 
+                  : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"),
                 textDecoration: "none",
                 fontSize: "0.74rem",
                 fontFamily: "var(--font-serif)",
                 letterSpacing: "0.05em",
                 fontWeight: pathname.startsWith("/careers") ? 800 : 600,
                 padding: "8px 0",
-                borderBottom: pathname.startsWith("/careers") ? "2px solid var(--gold-600)" : "2px solid transparent",
-                transition: "color 0.2s"
+                borderBottom: pathname.startsWith("/careers") ? "2px solid var(--gold-500)" : "2px solid transparent",
+                transition: "color 0.2s, border-color 0.2s",
+                textShadow: (pathname.startsWith("/careers") && theme === "dark") ? "0 0 10px rgba(212, 163, 40, 0.45)" : "none",
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold-400)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = pathname.startsWith("/careers") ? "var(--gold-400)" : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"))}
             >
               {t("common.careers").toUpperCase()}
             </Link>
@@ -623,16 +694,21 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
             <Link
               href="/business-ideas"
               style={{
-                color: pathname.startsWith("/business-ideas") ? "var(--gold-700)" : "var(--text-primary)",
+                color: pathname.startsWith("/business-ideas") 
+                  ? "var(--gold-400)" 
+                  : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"),
                 textDecoration: "none",
                 fontSize: "0.74rem",
                 fontFamily: "var(--font-serif)",
                 letterSpacing: "0.05em",
                 fontWeight: pathname.startsWith("/business-ideas") ? 800 : 600,
                 padding: "8px 0",
-                borderBottom: pathname.startsWith("/business-ideas") ? "2px solid var(--gold-600)" : "2px solid transparent",
-                transition: "color 0.2s"
+                borderBottom: pathname.startsWith("/business-ideas") ? "2px solid var(--gold-500)" : "2px solid transparent",
+                transition: "color 0.2s, border-color 0.2s",
+                textShadow: (pathname.startsWith("/business-ideas") && theme === "dark") ? "0 0 10px rgba(212, 163, 40, 0.45)" : "none",
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold-400)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = pathname.startsWith("/business-ideas") ? "var(--gold-400)" : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"))}
             >
               {t("common.businessIdeas").toUpperCase()}
             </Link>
@@ -641,16 +717,21 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
             <Link
               href="/contact"
               style={{
-                color: pathname.startsWith("/contact") ? "var(--gold-700)" : "var(--text-primary)",
+                color: pathname.startsWith("/contact") 
+                  ? "var(--gold-400)" 
+                  : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"),
                 textDecoration: "none",
                 fontSize: "0.74rem",
                 fontFamily: "var(--font-serif)",
                 letterSpacing: "0.05em",
                 fontWeight: pathname.startsWith("/contact") ? 800 : 600,
                 padding: "8px 0",
-                borderBottom: pathname.startsWith("/contact") ? "2px solid var(--gold-600)" : "2px solid transparent",
-                transition: "color 0.2s"
+                borderBottom: pathname.startsWith("/contact") ? "2px solid var(--gold-500)" : "2px solid transparent",
+                transition: "color 0.2s, border-color 0.2s",
+                textShadow: (pathname.startsWith("/contact") && theme === "dark") ? "0 0 10px rgba(212, 163, 40, 0.45)" : "none",
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold-400)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = pathname.startsWith("/contact") ? "var(--gold-400)" : (theme === "dark" ? "rgba(255, 255, 255, 0.9)" : "var(--text-primary)"))}
             >
               {t("common.contact").toUpperCase()}
             </Link>
@@ -666,6 +747,7 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                 borderRadius: "30px",
                 fontSize: "0.78rem",
                 letterSpacing: "0.06em",
+                boxShadow: theme === "dark" ? "0 4px 18px rgba(212, 163, 40, 0.35)" : "0 4px 14px rgba(184, 134, 11, 0.25)",
               }}
             >
               <span>{t("common.inquireNow").toUpperCase()}</span>
@@ -790,10 +872,36 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
               </button>
             </div>
 
-            {/* Language Selector Strip */}
-            <div style={{ padding: "14px 24px", background: "rgba(212, 163, 40, 0.08)", borderBottom: "1px solid rgba(212, 163, 40, 0.15)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            {/* Theme & Language Selector Strips */}
+            <div style={{ padding: "12px 24px", background: "rgba(212, 163, 40, 0.08)", borderBottom: "1px solid rgba(212, 163, 40, 0.15)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontSize: "0.75rem", color: "var(--gold-300)", fontWeight: 700, letterSpacing: "0.05em" }}>
-                PORTAL LANGUAGE
+                {language === "ar" ? "المظهر" : "THEME"}
+              </span>
+              <button
+                type="button"
+                onClick={toggleTheme}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  background: "rgba(255,255,255,0.08)",
+                  color: "var(--gold-300)",
+                  border: "1px solid rgba(212, 163, 40, 0.3)",
+                  borderRadius: "4px",
+                  padding: "4px 12px",
+                  fontSize: "0.72rem",
+                  fontWeight: 700,
+                  cursor: "pointer"
+                }}
+              >
+                {theme === "light" ? <Moon size={12} /> : <Sun size={12} />}
+                <span>{theme === "light" ? (language === "ar" ? "الوضع الداكن" : "Dark Mode") : (language === "ar" ? "الوضع الفاتح" : "Light Mode")}</span>
+              </button>
+            </div>
+
+            <div style={{ padding: "12px 24px", background: "rgba(212, 163, 40, 0.05)", borderBottom: "1px solid rgba(212, 163, 40, 0.15)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <span style={{ fontSize: "0.75rem", color: "var(--gold-300)", fontWeight: 700, letterSpacing: "0.05em" }}>
+                {language === "ar" ? "لغة الموقع" : "PORTAL LANGUAGE"}
               </span>
               <div style={{ display: "flex", gap: "6px" }}>
                 <button
@@ -841,7 +949,7 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                 { label: t("common.investor"), href: "/investor-centre" },
                 { label: t("common.careers"), href: "/careers" },
                 { label: t("common.businessIdeas"), href: "/business-ideas" },
-                { label: "Achievements & Awards", href: "/achievements" },
+                { label: t("common.achievements"), href: "/achievements" },
                 { label: t("common.csr"), href: "/csr" },
                 { label: t("common.news"), href: "/news" },
                 { label: t("common.contact"), href: "/contact" },

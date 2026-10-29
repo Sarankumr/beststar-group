@@ -12,7 +12,7 @@ export default function NewsTicker() {
   return (
     <section
       style={{
-        backgroundColor: "#FFFDF9",
+        backgroundColor: "var(--bg-surface)",
         borderTop: "1px solid var(--border-gold-subtle)",
         borderBottom: "1px solid var(--border-gold-subtle)",
         padding: "10px 0",

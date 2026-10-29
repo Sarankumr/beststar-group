@@ -16,7 +16,7 @@ export default function ChairmanSection() {
       className="section-spacing"
       style={{
         position: "relative",
-        backgroundColor: "#FDFBF7",
+        backgroundColor: "var(--bg-surface)",
         borderTop: "1px solid var(--border-gold-subtle)",
         borderBottom: "1px solid var(--border-gold-subtle)",
         overflow: "hidden",
@@ -45,7 +45,7 @@ export default function ChairmanSection() {
                 position: "relative",
                 width: "100%",
                 maxWidth: "460px",
-                background: "#FFFFFF",
+                background: "var(--bg-card)",
                 border: "1.5px solid var(--border-gold-medium)",
                 borderRadius: "14px",
                 padding: "24px",
@@ -169,7 +169,7 @@ export default function ChairmanSection() {
             <div 
               style={{
                 position: "relative",
-                background: "#FFFFFF",
+                background: "var(--bg-card)",
                 borderLeft: isRtl ? "1px solid var(--border-gold-subtle)" : "4px solid var(--gold-600)",
                 borderRight: isRtl ? "4px solid var(--gold-600)" : "1px solid var(--border-gold-subtle)",
                 borderTop: "1px solid var(--border-gold-subtle)",
@@ -264,7 +264,7 @@ export default function ChairmanSection() {
               <button
                 onClick={() => setModalOpen(false)}
                 style={{
-                  background: "#F1EFEA",
+                  background: "var(--bg-card-hover)",
                   border: "none",
                   borderRadius: "50%",
                   color: "var(--text-secondary)",

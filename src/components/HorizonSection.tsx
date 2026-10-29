@@ -20,7 +20,7 @@ export default function HorizonSection() {
   const { t, isRtl } = useLanguage();
   const [activeTab, setActiveTab] = useState<"milestones" | "synergies" | "governance">("milestones");
 
-  const milestones = [
+  const fallbackMilestones = [
     {
       year: "2008",
       title: "Foundation of Best Star Enterprise",
@@ -59,7 +59,7 @@ export default function HorizonSection() {
     }
   ];
 
-  const synergies = [
+  const fallbackSynergies = [
     {
       title: "Cold-Chain Healthcare Logistics",
       pair: "Best Star Pharma + Best Star Cargo",
@@ -86,12 +86,26 @@ export default function HorizonSection() {
     }
   ];
 
+  const milestones = fallbackMilestones.map((ms, idx) => ({
+    year: ms.year,
+    title: t(`horizonSection.milestones.${idx}.title`) || ms.title,
+    desc: t(`horizonSection.milestones.${idx}.desc`) || ms.desc,
+    badge: t(`horizonSection.milestones.${idx}.badge`) || ms.badge,
+  }));
+
+  const synergies = fallbackSynergies.map((syn, idx) => ({
+    title: t(`horizonSection.synergies.${idx}.title`) || syn.title,
+    pair: t(`horizonSection.synergies.${idx}.pair`) || syn.pair,
+    desc: t(`horizonSection.synergies.${idx}.desc`) || syn.desc,
+    tag: t(`horizonSection.synergies.${idx}.tag`) || syn.tag,
+  }));
+
   return (
     <section 
       style={{
         position: "relative",
         padding: "85px 0",
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "var(--bg-deep)",
         borderTop: "1px solid var(--border-gold-subtle)",
         borderBottom: "1px solid var(--border-gold-subtle)",
       }}
@@ -102,13 +116,13 @@ export default function HorizonSection() {
         <div style={{ textAlign: "center", marginBottom: "44px" }}>
           <div className="section-label" style={{ justifyContent: "center" }}>
             <Compass size={14} color="var(--gold-600)" />
-            <span>CONGLOMERATE STRATEGIC HORIZON</span>
+            <span>{t("horizonSection.badge")}</span>
           </div>
           <h2 className="section-title">
-            Strategic Trajectory & <span className="text-gold-gradient">Enterprise Vision</span>
+            {t("horizonSection.title")}
           </h2>
           <p className="section-subtitle" style={{ margin: "0 auto" }}>
-            A disciplined architecture of sustained multi-sector expansion, sovereign capital allocation, and cross-border commercial resilience.
+            {t("horizonSection.subtitle")}
           </p>
         </div>
 
@@ -128,7 +142,7 @@ export default function HorizonSection() {
               padding: "10px 22px",
               borderRadius: "30px",
               border: activeTab === "milestones" ? "1.5px solid var(--gold-600)" : "1.5px solid var(--border-gold-subtle)",
-              background: activeTab === "milestones" ? "linear-gradient(135deg, #0A0E17 0%, #151C2C 100%)" : "#FFFFFF",
+              background: activeTab === "milestones" ? "linear-gradient(135deg, #0A0E17 0%, #151C2C 100%)" : "var(--bg-card)",
               color: activeTab === "milestones" ? "var(--gold-300)" : "var(--text-secondary)",
               fontSize: "0.82rem",
               fontWeight: 700,
@@ -142,7 +156,7 @@ export default function HorizonSection() {
             }}
           >
             <TrendingUp size={14} />
-            <span>HISTORICAL TIMELINE & HORIZON 2030</span>
+            <span>{t("horizonSection.tabMilestones")}</span>
           </button>
 
           <button
@@ -151,7 +165,7 @@ export default function HorizonSection() {
               padding: "10px 22px",
               borderRadius: "30px",
               border: activeTab === "synergies" ? "1.5px solid var(--gold-600)" : "1.5px solid var(--border-gold-subtle)",
-              background: activeTab === "synergies" ? "linear-gradient(135deg, #0A0E17 0%, #151C2C 100%)" : "#FFFFFF",
+              background: activeTab === "synergies" ? "linear-gradient(135deg, #0A0E17 0%, #151C2C 100%)" : "var(--bg-card)",
               color: activeTab === "synergies" ? "var(--gold-300)" : "var(--text-secondary)",
               fontSize: "0.82rem",
               fontWeight: 700,
@@ -165,7 +179,7 @@ export default function HorizonSection() {
             }}
           >
             <Layers size={14} />
-            <span>CROSS-SECTOR CONGLOMERATE SYNERGY</span>
+            <span>{t("horizonSection.tabSynergies")}</span>
           </button>
 
           <button
@@ -174,7 +188,7 @@ export default function HorizonSection() {
               padding: "10px 22px",
               borderRadius: "30px",
               border: activeTab === "governance" ? "1.5px solid var(--gold-600)" : "1.5px solid var(--border-gold-subtle)",
-              background: activeTab === "governance" ? "linear-gradient(135deg, #0A0E17 0%, #151C2C 100%)" : "#FFFFFF",
+              background: activeTab === "governance" ? "linear-gradient(135deg, #0A0E17 0%, #151C2C 100%)" : "var(--bg-card)",
               color: activeTab === "governance" ? "var(--gold-300)" : "var(--text-secondary)",
               fontSize: "0.82rem",
               fontWeight: 700,
@@ -188,7 +202,7 @@ export default function HorizonSection() {
             }}
           >
             <ShieldCheck size={14} />
-            <span>RISK & FIDUCIARY GOVERNANCE</span>
+            <span>{t("horizonSection.tabGovernance")}</span>
           </button>
         </div>
 
@@ -207,7 +221,7 @@ export default function HorizonSection() {
                 key={idx}
                 className="luxe-card"
                 style={{
-                  background: idx === milestones.length - 1 ? "linear-gradient(135deg, #0A0E17 0%, #171E2D 100%)" : "#FAF9F6",
+                  background: idx === milestones.length - 1 ? "linear-gradient(135deg, #0A0E17 0%, #171E2D 100%)" : "var(--bg-card)",
                   color: idx === milestones.length - 1 ? "#FFFFFF" : "var(--text-primary)",
                   border: idx === milestones.length - 1 ? "1.5px solid rgba(212, 163, 40, 0.5)" : "1.5px solid var(--border-gold-subtle)",
                   padding: "26px",
@@ -286,7 +300,7 @@ export default function HorizonSection() {
                 key={idx}
                 className="luxe-card"
                 style={{
-                  background: "#FFFFFF",
+                  background: "var(--bg-card)",
                   border: "1.5px solid var(--border-gold-medium)",
                   padding: "28px",
                 }}
@@ -328,7 +342,7 @@ export default function HorizonSection() {
         {activeTab === "governance" && (
           <div 
             style={{
-              background: "#FAF9F6",
+              background: "var(--bg-surface)",
               border: "1.5px solid var(--border-gold-medium)",
               borderRadius: "12px",
               padding: "36px",
@@ -340,11 +354,11 @@ export default function HorizonSection() {
                 <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
                   <ShieldCheck size={18} color="var(--gold-700)" />
                   <h4 className="font-serif" style={{ fontSize: "1.1rem", color: "var(--text-primary)", margin: 0 }}>
-                    Sovereign Compliance
+                    {t("horizonSection.govCard1Title")}
                   </h4>
                 </div>
                 <p style={{ color: "var(--text-secondary)", fontSize: "0.88rem", lineHeight: 1.65, margin: 0 }}>
-                  Conforming strictly to UAE Federal Law No. 8, UAE Ministry of Health and Prevention (MOHAP) regulations, and ISO 9001:2015 audited workflows.
+                  {t("horizonSection.govCard1Desc")}
                 </p>
               </div>
 
@@ -352,11 +366,11 @@ export default function HorizonSection() {
                 <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
                   <Building2 size={18} color="var(--gold-700)" />
                   <h4 className="font-serif" style={{ fontSize: "1.1rem", color: "var(--text-primary)", margin: 0 }}>
-                    Tier-1 Banking Alliances
+                    {t("horizonSection.govCard2Title")}
                   </h4>
                 </div>
                 <p style={{ color: "var(--text-secondary)", fontSize: "0.88rem", lineHeight: 1.65, margin: 0 }}>
-                  Strategic syndicated credit facilities and treasury partnerships with prominent regional financial institutions across the UAE and GCC.
+                  {t("horizonSection.govCard2Desc")}
                 </p>
               </div>
 
@@ -364,18 +378,18 @@ export default function HorizonSection() {
                 <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
                   <Globe2 size={18} color="var(--gold-700)" />
                   <h4 className="font-serif" style={{ fontSize: "1.1rem", color: "var(--text-primary)", margin: 0 }}>
-                    Cross-Border Fiduciary Oversight
+                    {t("horizonSection.govCard3Title")}
                   </h4>
                 </div>
                 <p style={{ color: "var(--text-secondary)", fontSize: "0.88rem", lineHeight: 1.65, margin: 0 }}>
-                  Independent audit committees overseeing subsidiary financial reporting, risk governance, and intellectual property (IP) protection.
+                  {t("horizonSection.govCard3Desc")}
                 </p>
               </div>
             </div>
 
             <div style={{ marginTop: "28px", paddingTop: "20px", borderTop: "1px solid var(--border-gold-subtle)", textAlign: "center" }}>
               <Link href="/about-us" className="btn-luxury-outline" style={{ display: "inline-flex", gap: "8px", padding: "10px 24px", fontSize: "0.82rem" }}>
-                <span>READ COMPLETE GOVERNANCE & HSE CHARTER</span>
+                <span>{t("horizonSection.govCta")}</span>
                 <ArrowRight size={14} />
               </Link>
             </div>

@@ -53,7 +53,7 @@ export default function AchievementsPage() {
   });
 
   return (
-    <div style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "var(--bg-deep)", minHeight: "100vh" }}>
       <Header />
 
       {/* Hero Header */}
@@ -62,7 +62,7 @@ export default function AchievementsPage() {
           position: "relative",
           paddingTop: "65px",
           paddingBottom: "55px",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-card)",
           borderBottom: "1px solid var(--border-gold-subtle)",
         }}
       >
@@ -84,36 +84,36 @@ export default function AchievementsPage() {
             </Link>
             <ChevronRight size={12} />
             <span style={{ color: "var(--text-primary)", fontWeight: 600 }}>
-              Achievements & Sovereign Accolades
+              {t("achievementsPage.breadcrumb")}
             </span>
           </div>
 
           <div style={{ maxWidth: "860px" }}>
             <div className="section-label">
               <Award size={14} color="var(--gold-600)" />
-              <span>SOVEREIGN RECOGNITION & INDUSTRY BENCHMARKS</span>
+              <span>{t("achievementsPage.badge")}</span>
             </div>
             <h1 className="section-title" style={{ marginBottom: "16px" }}>
-              Corporate <span className="text-gold-gradient">Achievements & Accolades</span>
+              {t("achievementsPage.title")}
             </h1>
             <p className="section-subtitle">
-              Documenting nearly two decades of institutional excellence, zero-harm safety milestones, UAE ministerial citations, and ESG leadership across Best Star Group Holding FZE and its operating subsidiaries.
+              {t("achievementsPage.subtitle")}
             </p>
 
             <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", marginTop: "24px", fontSize: "0.82rem", color: "var(--text-secondary)" }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
                 <ShieldCheck size={16} color="#10B981" />
-                <strong>MOHAP Class A Certified</strong>
+                <strong>{t("achievementsPage.stat1")}</strong>
               </span>
               <span>•</span>
               <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
                 <Award size={16} color="var(--gold-600)" />
-                <strong>2.4M Safe Hours (DEWA Zero LTI)</strong>
+                <strong>{t("achievementsPage.stat2")}</strong>
               </span>
               <span>•</span>
               <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
                 <Sparkles size={16} color="var(--gold-600)" />
-                <strong>24.3% Energy Reduction Trophy</strong>
+                <strong>{t("achievementsPage.stat3")}</strong>
               </span>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function AchievementsPage() {
       </section>
 
       {/* Main List Section */}
-      <section className="section-spacing" style={{ backgroundColor: "#FAF8F5" }}>
+      <section className="section-spacing" style={{ backgroundColor: "var(--bg-deep)" }}>
         <div className="site-container">
           
           {/* Search & Category Filter */}
@@ -133,7 +133,7 @@ export default function AchievementsPage() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "#FFFFFF",
+                backgroundColor: "var(--bg-card)",
                 border: "1.5px solid var(--border-gold-medium)",
                 borderRadius: "32px",
                 padding: "6px 18px",
@@ -221,7 +221,7 @@ export default function AchievementsPage() {
                   padding: "0",
                   overflow: "hidden",
                   border: "1px solid var(--border-gold-medium)",
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                 }}
               >
                 {/* Visual Cover */}
@@ -295,7 +295,7 @@ export default function AchievementsPage() {
                     </p>
 
                     {/* Metrics Highlights */}
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "18px", padding: "10px", backgroundColor: "#FAF9F6", borderRadius: "6px", border: "1px solid var(--border-gold-subtle)" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "18px", padding: "10px", backgroundColor: "var(--bg-surface)", borderRadius: "6px", border: "1px solid var(--border-gold-subtle)" }}>
                       {ach.keyMetrics.slice(0, 2).map((km, i) => (
                         <div key={i}>
                           <div style={{ fontSize: "0.66rem", color: "var(--text-muted)", textTransform: "uppercase" }}>{km.label}</div>

@@ -67,13 +67,13 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
   };
 
   return (
-    <div style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "var(--bg-deep)", minHeight: "100vh" }}>
       <Header />
 
       {/* Top Breadcrumb & Return Bar */}
       <div 
         style={{
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-surface)",
           borderBottom: "1px solid var(--border-gold-subtle)",
           padding: "12px 0",
           fontSize: "0.82rem",
@@ -243,7 +243,7 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
             <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
               
               {/* 1. Executive Role Overview */}
-              <div className="luxe-card" style={{ background: "#FFFFFF", border: "1.5px solid var(--border-gold-medium)", padding: "34px" }}>
+              <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1.5px solid var(--border-gold-medium)", padding: "34px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
                   <Sparkles size={16} color="var(--gold-600)" />
                   <span className="font-serif" style={{ fontSize: "0.8rem", color: "var(--gold-700)", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase" }}>
@@ -265,7 +265,7 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
 
               {/* 2. Key Responsibilities & Deliverables */}
               {job.responsibilities && (
-                <div className="luxe-card" style={{ background: "#FFFFFF", border: "1.5px solid var(--border-gold-medium)", padding: "34px" }}>
+                <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1.5px solid var(--border-gold-medium)", padding: "34px" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
                     <Briefcase size={16} color="var(--gold-600)" />
                     <span className="font-serif" style={{ fontSize: "0.8rem", color: "var(--gold-700)", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase" }}>
@@ -289,7 +289,7 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
 
               {/* 3. Candidate Qualifications & Requirements */}
               {job.qualifications && (
-                <div className="luxe-card" style={{ background: "#FFFFFF", border: "1.5px solid var(--border-gold-medium)", padding: "34px" }}>
+                <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1.5px solid var(--border-gold-medium)", padding: "34px" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
                     <Award size={16} color="var(--gold-600)" />
                     <span className="font-serif" style={{ fontSize: "0.8rem", color: "var(--gold-700)", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase" }}>
@@ -313,7 +313,7 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
 
               {/* 4. Skills & Competencies */}
               {job.skills && (
-                <div className="luxe-card" style={{ background: "#FFFFFF", border: "1.5px solid var(--border-gold-medium)", padding: "34px" }}>
+                <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1.5px solid var(--border-gold-medium)", padding: "34px" }}>
                   <h3 className="font-serif" style={{ fontSize: "1.3rem", color: "var(--text-primary)", marginBottom: "16px" }}>
                     Key Competencies & Technical Skills
                   </h3>
@@ -363,7 +363,7 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
               )}
 
               {/* 6. About the Operating Subsidiary */}
-              <div className="luxe-card" style={{ background: "#FAF9F6", border: "1px solid var(--border-gold-subtle)", padding: "28px" }}>
+              <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1px solid var(--border-gold-subtle)", padding: "28px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
                   <Building2 size={20} color="var(--gold-700)" />
                   <h4 className="font-serif" style={{ fontSize: "1.15rem", color: "var(--text-primary)", margin: 0 }}>
@@ -387,7 +387,7 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
               <div 
                 className="luxe-card"
                 style={{
-                  background: "#FFFFFF",
+                  background: "var(--bg-card)",
                   border: "2px solid var(--border-gold-medium)",
                   boxShadow: "0 18px 45px rgba(0, 0, 0, 0.08)",
                   borderRadius: "12px",
@@ -427,7 +427,7 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
                       Your candidate dossier has been safely archived in the Best Star Group Talent Database.
                     </p>
 
-                    <div style={{ background: "#FFFFFF", padding: "12px", borderRadius: "6px", border: "1px dashed var(--gold-400)", marginBottom: "18px" }}>
+                    <div style={{ background: "var(--bg-surface)", padding: "12px", borderRadius: "6px", border: "1px dashed var(--gold-400)", marginBottom: "18px" }}>
                       <div style={{ fontSize: "0.7rem", color: "var(--text-muted)", textTransform: "uppercase" }}>Application Reference</div>
                       <div style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--gold-800)", fontFamily: "monospace" }}>
                         {applicationRef}
@@ -461,7 +461,7 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
                           border: "1.5px solid var(--border-gold-medium)",
                           borderRadius: "4px",
                           fontSize: "0.88rem",
-                          background: "#FFFFFF",
+                          background: "var(--bg-surface)",
                           color: "var(--text-primary)",
                           outline: "none"
                         }}
@@ -485,7 +485,7 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
                             border: "1.5px solid var(--border-gold-medium)",
                             borderRadius: "4px",
                             fontSize: "0.88rem",
-                            background: "#FFFFFF",
+                            background: "var(--bg-surface)",
                             color: "var(--text-primary)",
                             outline: "none"
                           }}
@@ -508,7 +508,7 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
                             border: "1.5px solid var(--border-gold-medium)",
                             borderRadius: "4px",
                             fontSize: "0.88rem",
-                            background: "#FFFFFF",
+                            background: "var(--bg-surface)",
                             color: "var(--text-primary)",
                             outline: "none"
                           }}
@@ -533,7 +533,7 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
                             border: "1.5px solid var(--border-gold-medium)",
                             borderRadius: "4px",
                             fontSize: "0.88rem",
-                            background: "#FFFFFF",
+                            background: "var(--bg-surface)",
                             color: "var(--text-primary)",
                             outline: "none"
                           }}
@@ -556,7 +556,7 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
                             border: "1.5px solid var(--border-gold-medium)",
                             borderRadius: "4px",
                             fontSize: "0.88rem",
-                            background: "#FFFFFF",
+                            background: "var(--bg-surface)",
                             color: "var(--text-primary)",
                             outline: "none"
                           }}
@@ -596,7 +596,7 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
                             border: "1.5px solid var(--border-gold-medium)",
                             borderRadius: "4px",
                             fontSize: "0.88rem",
-                            background: "#FFFFFF",
+                            background: "var(--bg-surface)",
                             color: "var(--text-primary)",
                             outline: "none"
                           }}
@@ -654,7 +654,7 @@ export default function JobDetailClient({ job }: JobDetailClientProps) {
                           border: "1.5px solid var(--border-gold-medium)",
                           borderRadius: "4px",
                           fontSize: "0.88rem",
-                          background: "#FFFFFF",
+                          background: "var(--bg-surface)",
                           color: "var(--text-primary)",
                           resize: "vertical",
                           outline: "none"

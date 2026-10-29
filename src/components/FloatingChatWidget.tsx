@@ -15,16 +15,19 @@ import {
   Headphones,
   ChevronRight
 } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function FloatingChatWidget() {
   const pathname = usePathname();
+  const { t, language } = useLanguage();
+  const isRtl = language === "ar";
   const [isOpen, setIsOpen] = useState(false);
   const [mode, setMode] = useState<"ai" | "officer">("ai");
   const [inputText, setInputText] = useState("");
   const [messages, setMessages] = useState<Array<{ sender: "bot" | "user"; text: string; time: string }>>([
     {
       sender: "bot",
-      text: "Greetings. I am BestStar Sovereign AI Concierge. How can I assist your enterprise or investment inquiry today?",
+      text: t("chatWidget.botInitialGreeting") || "Greetings. I am BestStar Sovereign AI Concierge. How can I assist your enterprise or investment inquiry today?",
       time: "Just now"
     }
   ]);
@@ -49,9 +52,13 @@ export default function FloatingChatWidget() {
     setTimeout(() => {
       let botResponse = "";
       if (mode === "ai") {
-        botResponse = `Thank you. I have registered your inquiry regarding "${userText}". Best Star Group manages 10 multi-national subsidiaries across Energy, EPC, Marine, Healthcare, and Tech.\n\nFor deep corporate due diligence or live officer conversation, click 'Open Separate Screen' above!`;
+        botResponse = isRtl
+          ? `شكراً لتواصلك. تم تسجيل استفسارك بشأن "${userText}". تدير مجموعة بست ستار 10 شركات تابعة متعددة الجنسيات عبر الطاقة، المقاولات EPC، الملاحة البحرية، الرعاية الصحية، والتقنية.\n\nلإجراء التدقيق المؤسسي الكامل أو التحدث المباشر مع المسؤولين، انقر فوق 'فتح الشاشة المخصصة المستقلة' أعلاه!`
+          : `Thank you. I have registered your inquiry regarding "${userText}". Best Star Group manages 10 multi-national subsidiaries across Energy, EPC, Marine, Healthcare, and Tech.\n\nFor deep corporate due diligence or live officer conversation, click 'Open Separate Screen' above!`;
       } else {
-        botResponse = `Dr. Tariq Al-Mansoor has received your message on our Dubai DIFC desk (Ref: #BSG-LIVE-38291). He is reviewing your request. For interactive live teleconference setup, please switch to our dedicated full chat screen!`;
+        botResponse = isRtl
+          ? `تلقى د. طارق المنصور رسالتك في مكتب دبي بمركز دبي المالي العالمي (المرجع: #BSG-LIVE-38291). يقوم حالياً بمراجعة طلبك. للمحادثات المباشرة وحجز المؤتمرات، يرجى الانتقال إلى الشاشة الكاملة المخصصة!`
+          : `Dr. Tariq Al-Mansoor has received your message on our Dubai DIFC desk (Ref: #BSG-LIVE-38291). He is reviewing your request. For interactive live teleconference setup, please switch to our dedicated full chat screen!`;
       }
       setMessages((prev) => [
         ...prev,
@@ -65,18 +72,18 @@ export default function FloatingChatWidget() {
   };
 
   return (
-    <div style={{ position: "fixed", bottom: "24px", right: "24px", zIndex: 999 }}>
+    <div style={{ position: "fixed", bottom: "24px", [isRtl ? "left" : "right"]: "24px", zIndex: 999, direction: isRtl ? "rtl" : "ltr" }}>
       {/* Expanded Floating Box */}
       {isOpen && (
         <div
           style={{
             position: "absolute",
             bottom: "70px",
-            right: "0",
+            [isRtl ? "left" : "right"]: "0",
             width: "360px",
             maxWidth: "calc(100vw - 32px)",
             height: "490px",
-            backgroundColor: "#FFFFFF",
+            backgroundColor: "var(--bg-card)",
             borderRadius: "14px",
             border: "1.5px solid #C5A059",
             boxShadow: "0 16px 40px rgba(12, 18, 30, 0.25)",
@@ -115,11 +122,11 @@ export default function FloatingChatWidget() {
               </div>
               <div>
                 <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "#FFFFFF" }}>
-                  {mode === "ai" ? "AI Executive Concierge" : "Live Officer Desk"}
+                  {mode === "ai" ? t("chatWidget.aiConcierge") : t("chatWidget.liveOfficer")}
                 </div>
                 <div style={{ fontSize: "0.68rem", color: "#48BB78", display: "flex", alignItems: "center", gap: "4px" }}>
                   <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#48BB78" }}></span>
-                  24/7 Sovereign Desk
+                  {t("chatWidget.sovereignDeskActive")}
                 </div>
               </div>
             </div>
@@ -143,7 +150,7 @@ export default function FloatingChatWidget() {
                   textDecoration: "none"
                 }}
               >
-                <span>Full Screen</span>
+                <span>{t("chatWidget.fullScreen")}</span>
                 <Maximize2 size={11} />
               </Link>
 
@@ -171,7 +178,7 @@ export default function FloatingChatWidget() {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              backgroundColor: "#FAF9F5",
+              backgroundColor: "var(--bg-surface)",
               borderBottom: "1px solid var(--border-gold-light)",
               padding: "7px 12px",
               textDecoration: "none",
@@ -182,15 +189,15 @@ export default function FloatingChatWidget() {
           >
             <span style={{ display: "flex", alignItems: "center", gap: "6px" }}>
               <Sparkles size={12} color="#C5A059" />
-              <strong>Launch Dedicated Separate Screen</strong>
+              <strong>{t("chatWidget.launchSeparateScreen")}</strong>
             </span>
-            <span style={{ color: "#8A6B29", fontWeight: 700, display: "flex", alignItems: "center" }}>
-              Open /chat ↗
+            <span style={{ color: "var(--gold-400)", fontWeight: 700, display: "flex", alignItems: "center" }}>
+              {t("chatWidget.openChatLink")}
             </span>
           </Link>
 
           {/* Mode Switcher Tabs */}
-          <div style={{ display: "flex", backgroundColor: "#EDF2F7", padding: "3px" }}>
+          <div style={{ display: "flex", backgroundColor: "var(--bg-surface-elevated)", padding: "3px" }}>
             <button
               onClick={() => setMode("ai")}
               style={{
@@ -200,12 +207,12 @@ export default function FloatingChatWidget() {
                 fontWeight: 700,
                 border: "none",
                 borderRadius: "4px",
-                backgroundColor: mode === "ai" ? "#FFFFFF" : "transparent",
-                color: mode === "ai" ? "#0C121E" : "#718096",
+                backgroundColor: mode === "ai" ? "var(--bg-card)" : "transparent",
+                color: mode === "ai" ? "var(--gold-400)" : "var(--text-muted)",
                 cursor: "pointer"
               }}
             >
-              🤖 AI Bot
+              {t("chatWidget.aiBotTab")}
             </button>
             <button
               onClick={() => setMode("officer")}
@@ -216,12 +223,12 @@ export default function FloatingChatWidget() {
                 fontWeight: 700,
                 border: "none",
                 borderRadius: "4px",
-                backgroundColor: mode === "officer" ? "#FFFFFF" : "transparent",
-                color: mode === "officer" ? "#0C121E" : "#718096",
+                backgroundColor: mode === "officer" ? "var(--bg-card)" : "transparent",
+                color: mode === "officer" ? "var(--gold-400)" : "var(--text-muted)",
                 cursor: "pointer"
               }}
             >
-              👤 Chat with Person
+              {t("chatWidget.officerTab")}
             </button>
           </div>
 
@@ -234,7 +241,7 @@ export default function FloatingChatWidget() {
               display: "flex",
               flexDirection: "column",
               gap: "10px",
-              backgroundColor: "#FCFCFA"
+              backgroundColor: "var(--bg-deep)"
             }}
           >
             {messages.map((m, idx) => (
@@ -243,8 +250,8 @@ export default function FloatingChatWidget() {
                 style={{
                   alignSelf: m.sender === "user" ? "flex-end" : "flex-start",
                   maxWidth: "85%",
-                  backgroundColor: m.sender === "user" ? "#0C121E" : "#FFFFFF",
-                  color: m.sender === "user" ? "#FFFFFF" : "#1A202C",
+                  backgroundColor: m.sender === "user" ? "var(--gold-500)" : "var(--bg-card)",
+                  color: m.sender === "user" ? "#080C14" : "var(--text-primary)",
                   padding: "8px 12px",
                   borderRadius: m.sender === "user" ? "10px 2px 10px 10px" : "2px 10px 10px 10px",
                   border: m.sender === "user" ? "none" : "1px solid var(--border-gold-light)",
@@ -262,7 +269,7 @@ export default function FloatingChatWidget() {
           <div
             style={{
               padding: "10px 12px",
-              backgroundColor: "#FFFFFF",
+              backgroundColor: "var(--bg-card)",
               borderTop: "1px solid var(--border-gold-light)",
               display: "flex",
               alignItems: "center",
@@ -279,7 +286,7 @@ export default function FloatingChatWidget() {
                   handleSend();
                 }
               }}
-              placeholder={mode === "ai" ? "Ask AI about subsidiaries..." : "Message Dr. Tariq Al-Mansoor..."}
+              placeholder={mode === "ai" ? t("chatWidget.placeholderAi") : t("chatWidget.placeholderOfficer")}
               style={{
                 flex: 1,
                 padding: "8px 10px",
@@ -303,7 +310,7 @@ export default function FloatingChatWidget() {
                 alignItems: "center"
               }}
             >
-              <Send size={13} />
+              <Send size={13} style={{ transform: isRtl ? "scaleX(-1)" : "none" }} />
             </button>
           </div>
         </div>
@@ -352,10 +359,10 @@ export default function FloatingChatWidget() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", lineHeight: 1.1 }}>
           <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#FFFFFF" }}>
-            AI & Live Desk
+            {t("chatWidget.launcherTitle")}
           </span>
           <span style={{ fontSize: "0.65rem", color: "#C5A059" }}>
-            Separate Screen Available ↗
+            {t("chatWidget.launcherSubtitle")}
           </span>
         </div>
       </button>

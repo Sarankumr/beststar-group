@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
   };
 
   return (
-    <div style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "var(--bg-deep)", minHeight: "100vh" }}>
       <Header />
 
       {/* Hero Header */}
@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
           position: "relative",
           paddingTop: "60px",
           paddingBottom: "50px",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-surface)",
           borderBottom: "1px solid var(--border-gold-subtle)",
         }}
       >
@@ -104,7 +104,7 @@ export default function PrivacyPolicyPage() {
                 type="button"
                 onClick={handlePrint}
                 style={{
-                  background: "#FFFFFF",
+                  background: "var(--bg-card)",
                   border: "1.5px solid var(--border-gold-medium)",
                   color: "var(--text-primary)",
                   padding: "9px 18px",
@@ -122,7 +122,7 @@ export default function PrivacyPolicyPage() {
                   e.currentTarget.style.borderColor = "var(--gold-500)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "#FFFFFF";
+                  e.currentTarget.style.backgroundColor = "var(--bg-card)";
                   e.currentTarget.style.borderColor = "var(--border-gold-medium)";
                 }}
               >
@@ -136,12 +136,12 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* Policy Text Body */}
-      <section className="section-spacing" style={{ backgroundColor: "#FAF8F5" }}>
+      <section className="section-spacing" style={{ backgroundColor: "var(--bg-deep)" }}>
         <div className="site-container" style={{ maxWidth: "980px" }}>
           
           <div 
             style={{
-              backgroundColor: "#FFFFFF",
+              backgroundColor: "var(--bg-card)",
               borderRadius: "12px",
               border: "1px solid var(--border-gold-medium)",
               padding: "48px 40px",
@@ -160,7 +160,7 @@ export default function PrivacyPolicyPage() {
                 marginBottom: "36px",
               }}
             >
-              <div style={{ padding: "18px", backgroundColor: "#FAF9F6", borderRadius: "8px", border: "1px solid var(--border-gold-subtle)" }}>
+              <div style={{ padding: "18px", backgroundColor: "var(--bg-card)", borderRadius: "8px", border: "1px solid var(--border-gold-subtle)" }}>
                 <Server size={20} color="var(--gold-600)" style={{ marginBottom: "8px" }} />
                 <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--text-primary)" }}>
                   Zero Unauthorized Commercialization
@@ -170,7 +170,7 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
 
-              <div style={{ padding: "18px", backgroundColor: "#FAF9F6", borderRadius: "8px", border: "1px solid var(--border-gold-subtle)" }}>
+              <div style={{ padding: "18px", backgroundColor: "var(--bg-card)", borderRadius: "8px", border: "1px solid var(--border-gold-subtle)" }}>
                 <Lock size={20} color="var(--gold-600)" style={{ marginBottom: "8px" }} />
                 <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--text-primary)" }}>
                   Enterprise-Grade Encryption
@@ -180,7 +180,7 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
 
-              <div style={{ padding: "18px", backgroundColor: "#FAF9F6", borderRadius: "8px", border: "1px solid var(--border-gold-subtle)" }}>
+              <div style={{ padding: "18px", backgroundColor: "var(--bg-card)", borderRadius: "8px", border: "1px solid var(--border-gold-subtle)" }}>
                 <UserCheck size={20} color="var(--gold-600)" style={{ marginBottom: "8px" }} />
                 <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--text-primary)" }}>
                   Fiduciary Subject Rights

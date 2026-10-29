@@ -323,19 +323,19 @@ export default function Footer() {
               <li>
                 <Link href="/careers" className="footer-link-luxury">
                   <ChevronRight size={13} color="var(--gold-500)" />
-                  <span>{t("common.careers")} & Job Desk</span>
+                  <span>{t("common.careers")}</span>
                 </Link>
               </li>
               <li>
                 <Link href="/business-ideas" className="footer-link-luxury">
                   <ChevronRight size={13} color="var(--gold-500)" />
-                  <span>{t("common.businessIdeas")} & Incubation</span>
+                  <span>{t("common.businessIdeas")}</span>
                 </Link>
               </li>
               <li>
                 <Link href="/achievements" className="footer-link-luxury">
                   <ChevronRight size={13} color="var(--gold-500)" />
-                  <span>Achievements & Citations</span>
+                  <span>{t("common.achievements")}</span>
                 </Link>
               </li>
             </ul>

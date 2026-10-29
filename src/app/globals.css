@@ -57,6 +57,96 @@
   --text-gold: #B8860B;
 }
 
+[data-theme="dark"] {
+  /* Royal Gold Spectrum - Dark adjustments */
+  --gold-50: #1A160A;
+  --gold-100: #2C220E;
+  --gold-200: #4D3C14;
+  --gold-300: #E5C05B;
+  --gold-400: #F3C34D;
+  --gold-500: #E0AC28;
+  --gold-600: #F5D77F;
+  --gold-700: #E5C05B;
+  --gold-800: #FFF8E1;
+
+  /* Royal Velvet Crimson & Burgundy */
+  --crimson-dark: #FF6B8B;
+  --crimson-mid: #E11D48;
+  --crimson-light: rgba(138, 13, 35, 0.3);
+  --crimson-border: rgba(225, 29, 72, 0.45);
+
+  /* Regal Midnight Onyx & Deep Slate Backgrounds */
+  --bg-deep: #080C14;
+  --bg-surface: #0E1524;
+  --bg-surface-elevated: #162035;
+  --bg-card: #101828;
+  --bg-card-hover: #18233A;
+  --bg-glass: rgba(14, 21, 36, 0.92);
+
+  /* Borders & Glows */
+  --border-gold-subtle: rgba(212, 163, 40, 0.22);
+  --border-gold-medium: rgba(212, 163, 40, 0.45);
+  --border-gold-bright: rgba(245, 215, 127, 0.9);
+  --glow-gold-sm: 0 4px 25px rgba(212, 163, 40, 0.2);
+  --glow-gold-lg: 0 10px 40px rgba(212, 163, 40, 0.35);
+  --shadow-luxe: 0 20px 45px -10px rgba(0, 0, 0, 0.65), 0 0 1px rgba(212, 163, 40, 0.25);
+
+  /* Text Colors - High Contrast Dark Mode */
+  --text-white: #FFFFFF;
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-gold: #F5D77F;
+}
+
+[data-theme="dark"] html {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  background-image: 
+    radial-gradient(ellipse at 50% -5%, rgba(212, 163, 40, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 90% 25%, rgba(138, 13, 35, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 10% 70%, rgba(212, 163, 40, 0.06) 0%, transparent 50%);
+}
+
+[data-theme="dark"] .btn-luxury-outline {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--border-gold-medium);
+}
+
+[data-theme="dark"] .btn-luxury-outline:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--gold-400);
+  color: var(--gold-300);
+}
+
+[data-theme="dark"] .modal-window {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border-gold-medium);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #0B101C;
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  border-color: var(--border-gold-subtle);
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: var(--text-muted);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

@@ -100,7 +100,16 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [autoRotate]);
 
-  const current = HERO_VERTICALS[activeTab];
+  const currentRaw = HERO_VERTICALS[activeTab];
+  const currentKey = currentRaw.id;
+  const current = {
+    ...currentRaw,
+    name: t(`heroExtra.verticals.${currentKey}.name`) || currentRaw.name,
+    sector: t(`heroExtra.verticals.${currentKey}.sector`) || currentRaw.sector,
+    metric: t(`heroExtra.verticals.${currentKey}.metric`) || currentRaw.metric,
+    metricLabel: t(`heroExtra.verticals.${currentKey}.metricLabel`) || currentRaw.metricLabel,
+    description: t(`heroExtra.verticals.${currentKey}.description`) || currentRaw.description,
+  };
 
   return (
     <section 
@@ -110,7 +119,7 @@ export default function Hero() {
         paddingTop: "48px",
         paddingBottom: "64px",
         overflow: "hidden",
-        backgroundColor: "#FAF9F6",
+        backgroundColor: "var(--bg-deep)",
         borderBottom: "1.5px solid var(--border-gold-subtle)",
       }}
     >
@@ -159,19 +168,19 @@ export default function Hero() {
         >
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: "#0C121E", color: "#C5A059", border: "1px solid #C5A059", padding: "4px 12px", borderRadius: "100px", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase" }}>
-              <Sparkles size={12} color="#C5A059" /> Sovereign Holding FZE
+              <Sparkles size={12} color="#C5A059" /> {t("heroExtra.sovereignHoldingFze")}
             </span>
             <span style={{ fontSize: "0.78rem", color: "var(--text-secondary)", fontWeight: 600 }}>
-              DIFC Dubai • Riyadh • Singapore • Zurich
+              {t("heroExtra.hubsList")}
             </span>
           </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: "16px", fontSize: "0.74rem", color: "var(--text-muted)" }}>
             <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-              <ShieldCheck size={14} color="#C5A059" /> AAA Fiduciary Benchmark
+              <ShieldCheck size={14} color="#C5A059" /> {t("heroExtra.fiduciaryBenchmark")}
             </span>
             <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-              <Award size={14} color="#C5A059" /> 10 Operating Verticals
+              <Award size={14} color="#C5A059" /> {t("heroExtra.tenOperatingVerticals")}
             </span>
           </div>
         </div>
@@ -191,7 +200,7 @@ export default function Hero() {
           <div>
             <div className="section-label" style={{ marginBottom: "16px" }}>
               <Building2 size={13} color="var(--gold-600)" />
-              <span>A DIVERSIFIED GLOBAL CONGLOMERATE</span>
+              <span>{t("heroExtra.conglomerateLabel")}</span>
             </div>
 
             <h1 
@@ -205,9 +214,9 @@ export default function Hero() {
                 marginBottom: "20px",
               }}
             >
-              Engineering Sovereign <span className="text-gold-gradient">Horizons.</span><br />
+              {t("heroExtra.headlinePart1")} <span className="text-gold-gradient">{t("heroExtra.headlineHighlight")}</span><br />
               <span className="font-editorial" style={{ fontStyle: "italic", fontWeight: 400, color: "var(--gold-800)" }}>
-                Transforming Industrial Excellence.
+                {t("heroExtra.headlinePart2")}
               </span>
             </h1>
 
@@ -220,7 +229,7 @@ export default function Hero() {
                 maxWidth: "600px",
               }}
             >
-              Best Star Group FZE orchestrates 10 high-capital subsidiaries across Power EPC, Healthcare & Life Sciences, Multimodal Cargo, Smart Facilities, and Aviation. We power critical infrastructure across the UAE, Saudi Arabia, India, and Malaysia with zero-default execution rigor.
+              {t("heroExtra.description")}
             </p>
 
             {/* Strategic Action CTAs */}
@@ -243,7 +252,7 @@ export default function Hero() {
                   borderRadius: "6px"
                 }}
               >
-                <span>EXPLORE 10 SUBSIDIARIES</span>
+                <span>{t("heroExtra.exploreCta")}</span>
                 <ArrowRight size={15} />
               </Link>
 
@@ -254,11 +263,11 @@ export default function Hero() {
                   padding: "12px 22px",
                   fontSize: "0.84rem",
                   borderRadius: "6px",
-                  backgroundColor: "#FFFFFF"
+                  backgroundColor: "var(--bg-card)"
                 }}
               >
                 <Compass size={15} color="var(--gold-600)" />
-                <span>CHAIRMAN'S DIRECTIVE</span>
+                <span>{t("heroExtra.chairmanCta")}</span>
               </Link>
 
               <Link
@@ -270,11 +279,11 @@ export default function Hero() {
                   borderRadius: "6px",
                   borderColor: "var(--border-gold-medium)",
                   backgroundColor: "rgba(212, 163, 40, 0.08)",
-                  color: "var(--gold-900)"
+                  color: "var(--gold-700)"
                 }}
               >
                 <Sparkles size={14} color="var(--gold-700)" />
-                <span>VENTURE INCUBATOR</span>
+                <span>{t("heroExtra.incubatorCta")}</span>
               </Link>
             </div>
 
@@ -290,7 +299,7 @@ export default function Hero() {
             >
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   border: "1px solid var(--border-gold-light)",
                   borderRadius: "8px",
                   padding: "14px 16px",
@@ -298,16 +307,16 @@ export default function Hero() {
                 }}
               >
                 <div className="font-serif" style={{ fontSize: "1.65rem", fontWeight: 800, color: "var(--gold-700)", lineHeight: 1 }}>
-                  AED 1.85B+
+                  {t("heroExtra.stat1Value")}
                 </div>
                 <div style={{ fontSize: "0.72rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700, marginTop: "6px" }}>
-                  Holding Asset Base
+                  {t("heroExtra.stat1Label")}
                 </div>
               </div>
 
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   border: "1px solid var(--border-gold-light)",
                   borderRadius: "8px",
                   padding: "14px 16px",
@@ -315,16 +324,16 @@ export default function Hero() {
                 }}
               >
                 <div className="font-serif" style={{ fontSize: "1.65rem", fontWeight: 800, color: "var(--gold-700)", lineHeight: 1 }}>
-                  10 Verticals
+                  {t("heroExtra.stat2Value")}
                 </div>
                 <div style={{ fontSize: "0.72rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700, marginTop: "6px" }}>
-                  Operating Subsidiaries
+                  {t("heroExtra.stat2Label")}
                 </div>
               </div>
 
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   border: "1px solid var(--border-gold-light)",
                   borderRadius: "8px",
                   padding: "14px 16px",
@@ -332,16 +341,16 @@ export default function Hero() {
                 }}
               >
                 <div className="font-serif" style={{ fontSize: "1.65rem", fontWeight: 800, color: "var(--gold-700)", lineHeight: 1 }}>
-                  3,400+
+                  {t("heroExtra.stat3Value")}
                 </div>
                 <div style={{ fontSize: "0.72rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700, marginTop: "6px" }}>
-                  Engineers & Specialists
+                  {t("heroExtra.stat3Label")}
                 </div>
               </div>
 
               <div 
                 style={{
-                  backgroundColor: "#FFFFFF",
+                  backgroundColor: "var(--bg-card)",
                   border: "1px solid var(--border-gold-light)",
                   borderRadius: "8px",
                   padding: "14px 16px",
@@ -349,10 +358,10 @@ export default function Hero() {
                 }}
               >
                 <div className="font-serif" style={{ fontSize: "1.65rem", fontWeight: 800, color: "var(--gold-700)", lineHeight: 1 }}>
-                  4 Hubs
+                  {t("heroExtra.stat4Value")}
                 </div>
                 <div style={{ fontSize: "0.72rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700, marginTop: "6px" }}>
-                  Sovereign Jurisdictions
+                  {t("heroExtra.stat4Label")}
                 </div>
               </div>
             </div>
@@ -375,38 +384,41 @@ export default function Hero() {
                 scrollbarWidth: "none"
               }}
             >
-              {HERO_VERTICALS.map((item, idx) => (
-                <button
-                  key={item.id}
-                  onClick={() => setActiveTab(idx)}
-                  style={{
-                    padding: "7px 12px",
-                    borderRadius: "6px",
-                    border: activeTab === idx ? "1.5px solid #C5A059" : "1px solid var(--border-gold-light)",
-                    backgroundColor: activeTab === idx ? "#0C121E" : "#FFFFFF",
-                    color: activeTab === idx ? "#E8C887" : "var(--text-secondary)",
-                    fontSize: "0.74rem",
-                    fontWeight: 700,
-                    cursor: "pointer",
-                    whiteSpace: "nowrap",
-                    transition: "all 0.2s ease",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "6px",
-                    boxShadow: activeTab === idx ? "0 4px 12px rgba(0,0,0,0.12)" : "none"
-                  }}
-                >
-                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: activeTab === idx ? "#48BB78" : "var(--border-gold-medium)" }} />
-                  {item.sector.split("&")[0].trim()}
-                </button>
-              ))}
+              {HERO_VERTICALS.map((item, idx) => {
+                const locSector = t(`heroExtra.verticals.${item.id}.sector`) || item.sector;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => setActiveTab(idx)}
+                    style={{
+                      padding: "7px 12px",
+                      borderRadius: "6px",
+                      border: activeTab === idx ? "1.5px solid #C5A059" : "1px solid var(--border-gold-light)",
+                      backgroundColor: activeTab === idx ? "#0C121E" : "var(--bg-card)",
+                      color: activeTab === idx ? "#E8C887" : "var(--text-secondary)",
+                      fontSize: "0.74rem",
+                      fontWeight: 700,
+                      cursor: "pointer",
+                      whiteSpace: "nowrap",
+                      transition: "all 0.2s ease",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      boxShadow: activeTab === idx ? "0 4px 12px rgba(0,0,0,0.12)" : "none"
+                    }}
+                  >
+                    <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: activeTab === idx ? "#48BB78" : "var(--border-gold-medium)" }} />
+                    {locSector.split("&")[0].trim()}
+                  </button>
+                );
+              })}
             </div>
 
             {/* Main Interactive Showcase Card */}
             <div 
               style={{
                 position: "relative",
-                backgroundColor: "#FFFFFF",
+                backgroundColor: "var(--bg-card)",
                 borderRadius: "14px",
                 border: "2px solid var(--border-gold-medium)",
                 overflow: "hidden",
@@ -484,7 +496,7 @@ export default function Hero() {
                     }}
                   >
                     <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#48BB78" }}></span>
-                    VERIFIED PORTFOLIO
+                    {t("heroExtra.verifiedPortfolio")}
                   </span>
                 </div>
 
@@ -539,7 +551,7 @@ export default function Hero() {
                       />
                     </div>
                     <span style={{ fontSize: "0.76rem", fontWeight: 700, color: "var(--text-primary)" }}>
-                      Best Star Group Directorate
+                      {t("heroExtra.directorate")}
                     </span>
                   </div>
 
@@ -560,7 +572,7 @@ export default function Hero() {
                       transition: "all 0.2s ease"
                     }}
                   >
-                    <span>Inspect Division</span>
+                    <span>{t("heroExtra.inspectDivision")}</span>
                     <ArrowRight size={13} color="var(--gold-800)" />
                   </Link>
                 </div>

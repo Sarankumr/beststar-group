@@ -20,7 +20,7 @@ export default function InvestorSection() {
       className="section-spacing"
       style={{
         position: "relative",
-        backgroundColor: "#FAF8F5",
+        backgroundColor: "var(--bg-deep)",
         borderTop: "1px solid var(--border-gold-subtle)",
         borderBottom: "1px solid var(--border-gold-subtle)",
       }}
@@ -50,48 +50,48 @@ export default function InvestorSection() {
             marginBottom: "44px",
           }}
         >
-          <div className="luxe-card" style={{ background: "#FFFFFF", border: "1.5px solid var(--border-gold-medium)" }}>
+          <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1.5px solid var(--border-gold-medium)" }}>
             <div className="gold-badge" style={{ marginBottom: "14px" }}>
-              Capital Allocation
+              {t("investorExtra.pillar1Badge")}
             </div>
             <h3 className="font-serif" style={{ fontSize: "1.3rem", color: "var(--text-primary)", marginBottom: "10px" }}>
-              Prudent Asset Diversification
+              {t("investorExtra.pillar1Title")}
             </h3>
             <p style={{ color: "var(--text-secondary)", fontSize: "0.92rem", lineHeight: 1.7 }}>
-              Revenues are balanced across 10 operating companies spanning healthcare retail, recurring MEP contracts, long-term commercial transit leasing, and national high-voltage infrastructure.
+              {t("investorExtra.pillar1Desc")}
             </p>
             <div style={{ borderTop: "1px solid var(--border-gold-subtle)", paddingTop: "14px", marginTop: "16px", color: "var(--gold-800)", fontSize: "0.82rem", fontWeight: 700 }}>
-              ✓ Low Beta & High Free Cash Flow
+              {t("investorExtra.pillar1Check")}
             </div>
           </div>
 
-          <div className="luxe-card" style={{ background: "#FFFFFF", border: "1.5px solid var(--border-gold-medium)" }}>
+          <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1.5px solid var(--border-gold-medium)" }}>
             <div className="gold-badge" style={{ marginBottom: "14px" }}>
-              Growth Strategy
+              {t("investorExtra.pillar2Badge")}
             </div>
             <h3 className="font-serif" style={{ fontSize: "1.3rem", color: "var(--text-primary)", marginBottom: "10px" }}>
-              Open Innovation Partnerships
+              {t("investorExtra.pillar2Title")}
             </h3>
             <p style={{ color: "var(--text-secondary)", fontSize: "0.92rem", lineHeight: 1.7 }}>
-              Our hybrid equity model brings capital, governance, and operational execution to high-growth regional joint ventures in the UAE, Saudi Arabia, India, and Malaysia.
+              {t("investorExtra.pillar2Desc")}
             </p>
             <div style={{ borderTop: "1px solid var(--border-gold-subtle)", paddingTop: "14px", marginTop: "16px", color: "var(--gold-800)", fontSize: "0.82rem", fontWeight: 700 }}>
-              ✓ Co-Investment & Strategic Synergies
+              {t("investorExtra.pillar2Check")}
             </div>
           </div>
 
-          <div className="luxe-card" style={{ background: "#FFFFFF", border: "1.5px solid var(--border-gold-medium)" }}>
+          <div className="luxe-card" style={{ background: "var(--bg-card)", border: "1.5px solid var(--border-gold-medium)" }}>
             <div className="gold-badge" style={{ marginBottom: "14px" }}>
-              Governance
+              {t("investorExtra.pillar3Badge")}
             </div>
             <h3 className="font-serif" style={{ fontSize: "1.3rem", color: "var(--text-primary)", marginBottom: "10px" }}>
-              Holding Company Architecture
+              {t("investorExtra.pillar3Title")}
             </h3>
             <p style={{ color: "var(--text-secondary)", fontSize: "0.92rem", lineHeight: 1.7 }}>
-              Structured under UAE Free Zone Enterprise (FZE) holding guidelines, ensuring strict regulatory ring-fencing, centralized risk management, and audited fiscal reporting.
+              {t("investorExtra.pillar3Desc")}
             </p>
             <div style={{ borderTop: "1px solid var(--border-gold-subtle)", paddingTop: "14px", marginTop: "16px", color: "var(--gold-800)", fontSize: "0.82rem", fontWeight: 700 }}>
-              ✓ Zero Debt on Core Holding Assets
+              {t("investorExtra.pillar3Check")}
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@ export default function InvestorSection() {
         {/* Factsheet Download Strip */}
         <div 
           style={{
-            background: "linear-gradient(135deg, #FFFFFF 0%, var(--gold-50) 100%)",
+            background: "linear-gradient(135deg, var(--bg-card) 0%, var(--bg-surface) 100%)",
             border: "2px solid var(--border-gold-medium)",
             borderRadius: "12px",
             padding: "36px",
@@ -114,7 +114,7 @@ export default function InvestorSection() {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--gold-700)", fontFamily: "var(--font-serif)", fontSize: "0.85rem", letterSpacing: "0.08em", fontWeight: 700, marginBottom: "6px" }}>
               <FileSpreadsheet size={16} />
-              <span>OFFICIAL FACTSHEET & INVESTOR DOSSIER</span>
+              <span>{t("investorExtra.factsheetStripLabel")}</span>
             </div>
             <h3 className="font-serif" style={{ fontSize: "1.45rem", color: "var(--text-primary)", marginBottom: "8px" }}>
               {t("investor.factsheetTitle")}

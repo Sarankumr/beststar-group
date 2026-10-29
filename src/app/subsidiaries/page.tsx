@@ -5,10 +5,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SubsidiariesSection from "@/components/SubsidiariesSection";
 import { Layers } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function SubsidiariesPage() {
+  const { t } = useLanguage();
+
   return (
-    <div style={{ backgroundColor: "#FAF8F5", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "var(--bg-deep)", minHeight: "100vh" }}>
       <Header />
 
       {/* Hero Banner */}
@@ -17,20 +20,20 @@ export default function SubsidiariesPage() {
           position: "relative",
           paddingTop: "65px",
           paddingBottom: "55px",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "var(--bg-card)",
           borderBottom: "1px solid var(--border-gold-subtle)",
         }}
       >
         <div className="site-container">
           <div className="section-label">
             <Layers size={14} />
-            <span>SPECIALIZED BUSINESS VERTICALS</span>
+            <span>{t("subsidiaries.badge")}</span>
           </div>
           <h1 className="section-title">
-            Our Operating <span className="text-gold-gradient">Subsidiaries</span>
+            {t("subsidiaries.title")}
           </h1>
           <p className="section-subtitle">
-            Best Star Group commands ten specialized operating entities across Healthcare, Facilities Engineering, Cargo Logistics, Luxury Travel, Technical Inspection, Passenger Fleets, Global Trading, and High-Voltage Infrastructure. Select any enterprise below to inspect its dedicated operational dossier.
+            {t("subsidiaries.subtitle")}
           </p>
         </div>
       </section>

@@ -127,7 +127,7 @@ export default function LuxurySelect({
           minWidth: 0,
           boxSizing: "border-box",
           padding: "11px 14px",
-          backgroundColor: disabled ? "#F3F4F6" : "#FFFFFF",
+          backgroundColor: disabled ? "var(--bg-surface)" : "var(--bg-card)",
           border: isOpen 
             ? "1.5px solid var(--gold-500)" 
             : "1.5px solid var(--border-gold-medium)",
@@ -188,7 +188,7 @@ export default function LuxurySelect({
             maxWidth: "100%",
             boxSizing: "border-box",
             zIndex: 9999,
-            backgroundColor: "#FFFFFF",
+            backgroundColor: "var(--bg-card)",
             border: "1.5px solid var(--border-gold-medium)",
             borderRadius: "8px",
             boxShadow: "0 14px 40px rgba(0, 0, 0, 0.14)",
